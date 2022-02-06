@@ -31,7 +31,9 @@
   font-weight: normal;
   text-decoration: none;
 }
-
+.socialMedia:hover{
+  text-decoration: underline;
+}
 article,
 aside,
 details,
