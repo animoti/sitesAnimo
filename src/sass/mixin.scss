@@ -1,0 +1,26 @@
+@mixin resolution {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding: 2rem 5rem;
+  display: flex;
+
+  @media (max-width: 768px) {
+    padding: 1.25rem 2rem;
+  }
+}
+
+@mixin transition($element: all, $time: 0.6s) {
+  transition: $element $time ease;
+  -webkit-transition: $element $time ease;
+  -moz-transition: $element $time ease;
+  -ms-transition: $element $time ease;
+  -o-transition: $element $time ease;
+}
+
+@mixin border($argument) {
+  border-radius: $argument;
+  -webkit-border-radius: $argument;
+  -moz-border-radius: $argument;
+  -ms-border-radius: $argument;
+  -o-border-radius: $argument;
+}
