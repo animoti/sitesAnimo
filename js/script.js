@@ -61,11 +61,11 @@ window.onload = () => {
         next: ".next",
       },
       rewind: true,
-      duration: 3,
+      duration: 2.5,
 
       responsive: [
         {
-          breakpoint: 850,
+          breakpoint: 1050,
           settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
