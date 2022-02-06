@@ -469,18 +469,23 @@ a:hover {
   text-align: center;
   margin-bottom: 4rem;
 }
-#services .cards-container {
+@media (max-width: 768px) {
+  #services .container .info-container {
+    margin-bottom: 3rem;
+  }
+}
+#services .container .cards-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 4rem;
   cursor: default;
 }
-#services .cards-container .card {
+#services .container .cards-container .card {
+  width: 20.6rem;
   background-color: var(--white);
   color: var(--dark-gray);
   height: fit-content;
-  flex-basis: 20.6rem;
   padding: 2rem 1.5rem;
   border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -494,11 +499,11 @@ a:hover {
   -ms-transition: all 0.6s ease;
   -o-transition: all 0.6s ease;
 }
-#services .cards-container .card .icon-container {
+#services .container .cards-container .card .icon-container {
   width: fit-content;
   margin: 0 auto;
 }
-#services .cards-container .card .icon-container i {
+#services .container .cards-container .card .icon-container i {
   display: block;
   font-size: 2rem;
   padding: 1rem;
@@ -509,49 +514,54 @@ a:hover {
   -o-border-radius: 50%;
   margin-bottom: 1rem;
 }
-#services .cards-container .card .icon-container i.icon-pie-chart {
+#services .container .cards-container .card .icon-container i.icon-pie-chart {
   background-color: var(--light-yellow);
   color: var(--yellow);
 }
-#services .cards-container .card .icon-container i.icon-dollar-sign {
+#services .container .cards-container .card .icon-container i.icon-dollar-sign {
   background-color: var(--light-green);
   color: var(--green);
 }
-#services .cards-container .card .icon-container i.icon-trending-up {
+#services .container .cards-container .card .icon-container i.icon-trending-up {
   background-color: var(--light-cyan);
   color: var(--cyan);
 }
-#services .cards-container .card .icon-container i.icon-shopping-bag {
+#services .container .cards-container .card .icon-container i.icon-shopping-bag {
   background-color: var(--light-red);
   color: var(--red);
 }
-#services .cards-container .card .icon-container i.icon-globe {
+#services .container .cards-container .card .icon-container i.icon-globe {
   background-color: var(--alt-light-blue);
   color: var(--blue);
 }
-#services .cards-container .card .icon-container i.icon-smartphone {
+#services .container .cards-container .card .icon-container i.icon-smartphone {
   background-color: var(--light-purple);
   color: var(--purple);
 }
-#services .cards-container .card h3 {
+#services .container .cards-container .card h3 {
   text-align: center;
   margin-bottom: 1rem;
 }
-#services .cards-container .card h3 a {
+#services .container .cards-container .card h3 a {
   font-family: "Montserrat";
   font-size: 1.1rem;
   font-weight: bold;
 }
-#services .cards-container .card p {
+#services .container .cards-container .card p {
   font-size: 0.9rem;
   line-height: 1.75;
 }
-#services .cards-container .card:hover {
+#services .container .cards-container .card:hover {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  #services .container .cards-container {
+    margin-bottom: 2rem;
+  }
 }
 
 #about .container {
@@ -603,7 +613,7 @@ a:hover {
   #about .container {
     gap: 2rem;
     flex-direction: column;
-    padding: 1.25rem 2rem;
+    padding: 2rem;
   }
 }
 

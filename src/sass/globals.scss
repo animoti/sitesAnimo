@@ -341,91 +341,98 @@ a {
     .info-container {
       text-align: center;
       margin-bottom: 4rem;
+
+      @media (max-width: 768px) {
+        margin-bottom: 3rem;
+      }
     }
-  }
 
-  .cards-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 4rem;
-    cursor: default;
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4rem;
+      cursor: default;
 
-    .card {
-      background-color: var(--white);
-      color: var(--dark-gray);
-      height: fit-content;
-      flex-basis: 20.6rem;
-      padding: 2rem 1.5rem;
-      @include border(3px);
-      box-shadow: 0 0 4px #00000029;
-      @include transition;
+      .card {
+        width: 20.6rem;
+        background-color: var(--white);
+        color: var(--dark-gray);
+        height: fit-content;
+        padding: 2rem 1.5rem;
+        @include border(3px);
+        box-shadow: 0 0 4px #00000029;
+        @include transition;
 
-      .icon-container {
-        width: fit-content;
-        margin: 0 auto;
+        .icon-container {
+          width: fit-content;
+          margin: 0 auto;
 
-        i {
-          display: block;
-          font-size: 2rem;
-          padding: 1rem;
-          @include border(50%);
+          i {
+            display: block;
+            font-size: 2rem;
+            padding: 1rem;
+            @include border(50%);
+            margin-bottom: 1rem;
+
+            &.icon-pie-chart {
+              background-color: var(--light-yellow);
+              color: var(--yellow);
+            }
+
+            &.icon-dollar-sign {
+              background-color: var(--light-green);
+              color: var(--green);
+            }
+
+            &.icon-trending-up {
+              background-color: var(--light-cyan);
+              color: var(--cyan);
+            }
+
+            &.icon-shopping-bag {
+              background-color: var(--light-red);
+              color: var(--red);
+            }
+
+            &.icon-globe {
+              background-color: var(--alt-light-blue);
+              color: var(--blue);
+            }
+
+            &.icon-smartphone {
+              background-color: var(--light-purple);
+              color: var(--purple);
+            }
+          }
+        }
+
+        h3 {
+          text-align: center;
           margin-bottom: 1rem;
 
-          &.icon-pie-chart {
-            background-color: var(--light-yellow);
-            color: var(--yellow);
-          }
-
-          &.icon-dollar-sign {
-            background-color: var(--light-green);
-            color: var(--green);
-          }
-
-          &.icon-trending-up {
-            background-color: var(--light-cyan);
-            color: var(--cyan);
-          }
-
-          &.icon-shopping-bag {
-            background-color: var(--light-red);
-            color: var(--red);
-          }
-
-          &.icon-globe {
-            background-color: var(--alt-light-blue);
-            color: var(--blue);
-          }
-
-          &.icon-smartphone {
-            background-color: var(--light-purple);
-            color: var(--purple);
+          a {
+            font-family: "Montserrat";
+            font-size: 1.1rem;
+            font-weight: bold;
           }
         }
-      }
 
-      h3 {
-        text-align: center;
-        margin-bottom: 1rem;
+        p {
+          font-size: 0.9rem;
+          line-height: 1.75;
+        }
 
-        a {
-          font-family: "Montserrat";
-          font-size: 1.1rem;
-          font-weight: bold;
+        &:hover {
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
         }
       }
-
-      p {
-        font-size: 0.9rem;
-        line-height: 1.75;
-      }
-
-      &:hover {
-        transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        -o-transform: scale(1.1);
+      @media (max-width: 768px) {
+        margin-bottom: 2rem;
       }
     }
   }
@@ -475,7 +482,7 @@ a {
     @media (max-width: 768px) {
       gap: 2rem;
       flex-direction: column;
-      padding: 1.25rem 2rem;
+      padding: 2rem;
     }
   }
 }
