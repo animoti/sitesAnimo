@@ -31,9 +31,7 @@
   font-weight: normal;
   text-decoration: none;
 }
-.socialMedia:hover{
-  text-decoration: underline;
-}
+
 article,
 aside,
 details,
@@ -640,6 +638,7 @@ a:hover {
   outline: none;
   border: none;
   font-size: 5rem;
+  line-height: 1;
   color: var(--dark-dark-blue);
   transition: all 0.6s ease;
   -webkit-transition: all 0.6s ease;
@@ -715,7 +714,15 @@ a:hover {
   align-items: center;
   gap: 0.5rem;
 }
-#pre-footer .container .social-container ul li i img {
+#pre-footer .container .social-container ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+#pre-footer .container .social-container ul li a:hover {
+  text-decoration: underline;
+}
+#pre-footer .container .social-container ul li a img {
   width: 1.5rem;
 }
 #pre-footer .container .address-container {

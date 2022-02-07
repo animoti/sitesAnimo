@@ -507,6 +507,7 @@ a {
         outline: none;
         border: none;
         font-size: 5rem;
+        line-height: 1;
         color: var(--dark-dark-blue);
         @include transition;
 
@@ -583,8 +584,19 @@ a {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        i img {
-          width: 1.5rem;
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 0.3rem;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          img {
+            width: 1.5rem;
+          }
         }
       }
     }
