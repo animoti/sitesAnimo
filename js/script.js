@@ -1,5 +1,5 @@
+// DOM Object/Functions
 let classToToggle = "active";
-
 const Header = {
   overlay: document.querySelector("#overlay"),
   element: document.querySelector("#header"),
@@ -40,6 +40,7 @@ const Home = {
   },
 };
 
+// Window Onload Functions
 window.onload = () => {
   Home.setHeight();
   window.addEventListener("resize", () => {
@@ -50,6 +51,7 @@ window.onload = () => {
     Header.fullSizeDropdown();
   });
 
+  // Glider.js Config
   gliderAutoplay(
     new Glider(document.querySelector(".glider"), {
       slidesToShow: 1,

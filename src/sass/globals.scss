@@ -81,6 +81,28 @@ a {
   display: none;
 }
 
+.float-icons {
+  position: fixed;
+  z-index: 2;
+  bottom: 2rem;
+  right: 2rem;
+
+  .icon-container {
+    display: block;
+    background-color: var(--light-blue);
+    padding: 1rem;
+    @include border(50%);
+    color: var(--white);
+    &:first-child {
+      margin-bottom: 1rem;
+    }
+
+    i {
+      font-size: 1.3rem;
+      color: var(--dark-gray);
+    }
+  }
+}
 #header {
   background-color: var(--dark-dark-blue);
   .container {
@@ -306,29 +328,6 @@ a {
       text-align: center;
       gap: 1.5rem;
       justify-content: center;
-    }
-  }
-
-  .float-icons {
-    position: fixed;
-    z-index: 2;
-    bottom: 2rem;
-    right: 2rem;
-
-    .icon-container {
-      display: block;
-      background-color: var(--light-blue);
-      padding: 1rem;
-      @include border(50%);
-      color: var(--white);
-      &:first-child {
-        margin-bottom: 1rem;
-      }
-
-      i {
-        font-size: 1.3rem;
-        color: var(--dark-gray);
-      }
     }
   }
 }
