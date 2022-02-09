@@ -628,13 +628,7 @@ a:hover {
   display: block;
   text-align: center;
 }
-#partners .container .glider-contain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-#partners .container .glider-contain .arrow {
+#partners .container .arrow {
   background-color: transparent;
   outline: none;
   border: none;
@@ -647,13 +641,18 @@ a:hover {
   -ms-transition: all 0.6s ease;
   -o-transition: all 0.6s ease;
 }
-#partners .container .glider-contain .arrow:hover {
+#partners .container .arrow:hover {
   opacity: 0.7;
 }
 @media (max-width: 768px) {
-  #partners .container .glider-contain .arrow {
+  #partners .container .arrow {
     display: none;
   }
+}
+#partners .container .glider-contain {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 #partners .container .glider-slide {
   display: flex;
@@ -672,7 +671,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 4px #00000029;
-  margin: 0.1rem;
+  margin: 0 auto;
   opacity: 1;
 }
 #partners .container .slide-item img {

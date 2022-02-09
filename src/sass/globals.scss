@@ -495,28 +495,27 @@ a {
     display: block;
     text-align: center;
 
+    .arrow {
+      background-color: transparent;
+      outline: none;
+      border: none;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--dark-dark-blue);
+      @include transition;
+
+      &:hover {
+        opacity: 0.7;
+      }
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
     .glider-contain {
       display: flex;
-      justify-content: center;
       align-items: center;
       gap: 2rem;
-
-      .arrow {
-        background-color: transparent;
-        outline: none;
-        border: none;
-        font-size: 5rem;
-        line-height: 1;
-        color: var(--dark-dark-blue);
-        @include transition;
-
-        &:hover {
-          opacity: 0.7;
-        }
-        @media (max-width: 768px) {
-          display: none;
-        }
-      }
     }
 
     .glider-slide {
@@ -533,7 +532,7 @@ a {
       justify-content: center;
       align-items: center;
       box-shadow: 0 0 4px #00000029;
-      margin: 0.1rem;
+      margin: 0 auto;
       opacity: 1;
 
       img {
