@@ -47,6 +47,7 @@ function loadServices() {
     .then((data) => {
       data.services.forEach((item) => {
         getService(item);
+        getMenu(item);
       });
     });
 }
@@ -60,11 +61,7 @@ function loadPartners() {
       });
     });
 }
-function delay(n) {
-  return new Promise(function (resolve) {
-    setTimeout(resolve, n * 1000);
-  });
-}
+
 function gliderStart() {
   gliderAutoplay(
     new Glider(document.querySelector(".glider"), {

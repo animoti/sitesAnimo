@@ -9,9 +9,4 @@ function getService(item) {
   <p>${item.description}</p>
 `;
   document.querySelector(".cards-container").appendChild(newService);
-  let servicesMenu = document.createElement("li");
-  servicesMenu.innerHTML = `              
-  <a href="${item.url}">${item.title}</a>`;
-
-  document.querySelector(".services-menu").appendChild(servicesMenu);
 }

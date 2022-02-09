@@ -13,19 +13,19 @@
   },
   {
     "title": "Modelo de Negócios", 
-    "url": "./",
+    "url": "../pages/business-model.html",
     "icon": "icon-trending-up",
     "description": "Não sabe ainda quais produtos e/ou serviços você irá oferecer na sua empresa? Possui dúvidas se os produtos/serviços que pretende ofertar são bons investimentos? Acredita que seu produto tem potencial no mercado competitivo? A Ânimo faz análises de negócios visando o crescimento da marca e alcance dos objetivos."
   },
   {
     "title": "Plano de Marketing", 
-    "url": "./",
+    "url": "../pages/marketing-plan.html",
     "icon": "icon-shopping-bag",
     "description": "Há várias ferramentas no marketing que podem ser utilizadas a favor de sua empresa. Investir em sua marca é de extrema importância para se tornar referência na praça e se destacar entre seus concorrentes. Do marketing digital ao social, nossos consultores estão preparados para impulsionar seu negócio."
   },
   {
     "title": "Desenvolvimento de Sites/Sistemas", 
-    "url": "../pages/development.html",
+    "url": "../",
     "icon": "icon-globe",
     "description": "Na Ânimo Consultoria disponibilizamos serviços voltados à clientes que buscam fortalecer sua identidade e ampliar a viabilidade de sua marca enquanto criam uma identidade digital."
   },

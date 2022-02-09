@@ -6,22 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Glider.js -->
-  <script src="./vendor/glider-js/glider.min.js" defer></script>
-  <link rel="stylesheet" type="text/css" href="./vendor/glider-js/glider.css">
+  <script src="../vendor/glider-js/glider.min.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="../vendor/glider-js/glider.css">
   <!-- Scripts -->
-  <script src="./js/functions/Menu.js" defer></script>
-  <script src="./js/functions/Partners.js" defer></script>
-  <script src="./js/functions/Services.js" defer></script>
-  <script src="./js/script.js" defer></script>
+  <script src="../js/functions/Main.js" defer></script>
+  <script src="../js/functions/Menu.js" defer></script>
+  <script src="../js/functions/Service.js" defer></script>
+  <script src="../js/pages.js" defer></script>
   <!-- Icons -->
-  <link rel="stylesheet" href="./assets/icons/icons.css">
+  <link rel="stylesheet" href="../assets/icons/icons.css">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <!-- Default Css -->
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
   <title>Ânimo Consultoria | Niterói-RJ</title>
 </head>
 
@@ -38,7 +39,7 @@
   <header id="header">
     <div class="container">
       <div class=" logo-container">
-        <a href=""><img src="./assets/logo.svg" alt="Ânimo Consultoria"></a>
+        <a href="../index.html"><img src="../assets/logo.svg" alt="Ânimo Consultoria"></a>
       </div>
       <div class="menu-container">
         <ul class="menu">
@@ -53,10 +54,16 @@
           <li><a href="#">Sobre</a></li>
         </ul>
         <ul class="mobile-menu">
-          <li><a href="#">Home</a></li>
+          <li><a href="./index.html">Home</a></li>
           <li class="services-trigger" onclick="Header.mobileDropdown()">
             <a>Serviços</a>
             <ul class="mobile-services-menu">
+              <li><a href="#">Viabilidade e Projeção Financeira</a></li>
+              <li><a href="#">Precificação</a></li>
+              <li><a href="#">Modelo de Negócios</a></li>
+              <li><a href="#">Plano de Marketing</a></li>
+              <li><a href="#">Desenvolvimento de Sites/Sistemas</a></li>
+              <li><a href="#">Gerenciamento de Redes Sociais</a></li>
             </ul>
           </li>
           <li><a href="#">Trabalhe Conosco</a></li>
@@ -71,61 +78,30 @@
     </div>
   </header>
   <main>
-    <section id="home">
+    <section id="main-content">
       <div class="container">
         <div class="info-container">
-          <h1>Ânimo Consultoria Empresa Junior da Unilasalle - RJ</h1>
-          <p>Consultorias que possibilitam uma visão ampla de planejamento e gerenciamento da sua empresa!</p>
-          <div class="button">
-            <a href="#">Agende Sua Reunião!</a>
-          </div>
+          <h1>Modelo de Negócios</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, eaque. Sequi, molestias consectetur assumenda illum optio eligendi inventore explicabo ipsam libero natus vero, mollitia laudantium placeat pariatur omnis temporibus numquam.</p>
         </div>
-        <div class="ilustration-container">
-          <img src="./assets/img/intro-illustration.png" alt="Ilustração de Organizão">
+        <div class="methodology-container">
+          <h2>Metodologias Utilizadas</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni enim ipsam numquam. Minus cumque debitis officiis odio, nobis molestiae voluptatem est impedit molestias natus quaerat voluptate ea possimus magni quasi.</p>
         </div>
-      </div>
-    </section>
-    <section id="services">
-      <div class="container">
-        <div class="info-container">
-          <h2>Serviços</h2>
-          <p>Conheça um pouco sobre nossos serviços!</p>
+        <div class="help-container">
+          <h2>Como podemos ajudar sua empresa</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis magnam voluptatibus praesentium animi laboriosam perferendis, aliquam dolores sint! Eius veritatis incidunt laboriosam iste repellendus eum id commodi nemo error obcaecati.</p>
         </div>
-        <div class="cards-container">
+        <div class="button">
+          <a href="#">Agendar uma Reunião</a>
         </div>
       </div>
-    </section>
-    <section id="about">
-      <div class="container">
-        <div class="info-container">
-          <h2>Sobre a Ânimo</h2>
-          <p>Somos uma associação civil sem fins lucrativos, constituída por alunos dos cursos de graduação do Centro Universitário LaSalle-RJ em Niterói.</p>
-          <p>Nosso objetivo é proporcionar serviços de alto valor agregado a seus clientes e promover o desenvolvimento pessoal e profissional dos alunos.</p>
-          <div class="button">
-            <a href="#">Veja Mais...</a>
-          </div>
-        </div>
-        <div class="img-container">
-          <img src="./assets/img/semana-capac.jpg" alt="Time Ânimo na semana de capacitação">
-        </div>
-      </div>
-    </section>
-    <section id="partners">
-      <div class="container">
-        <h2>Nossos Parceiros</h2>
-        <div class="glider-contain">
-          <button aria-label="Voltar" class="arrow prev">«</button>
-          <div class="glider">
-          </div>
-          <button aria-label="Próximo" class="arrow next">»</button>
-        </div>
-        <div role="tablist" class="dots"></div>
       </div>
     </section>
     <section id="pre-footer">
       <div class="container">
         <div class="info-container">
-          <img src="./assets/img/short-logo.png" alt="Ânimo Consultoria - Logo Reduzida">
+          <img src="../assets/img/short-logo.png" alt="Ânimo Consultoria - Logo Reduzida">
           <p>Entre em contato conosco e dê um Ânimo no seu negócio!</p>
         </div>
         <div class="links-container">
@@ -138,9 +114,9 @@
         </div>
         <div class="social-container">
           <ul>
-            <li><a href="https://www.facebook.com/animoconsultoriapage" target="_blank"><img src="./assets/icons/social-media/facebook-icon.png" alt="Facebook Logo" style="display: inline;">/animoconsultoriapage</li></a>
-            <li><a href="https://www.instagram.com/animoconsultoria/" target="_blank"><i><img src="./assets/icons/social-media/instagram-icon.png" alt="Instagram Logo" style="display: inline;"></i>@animoconsultoria</li></a>
-            <li><a href="https://www.linkedin.com/in/animoconsultoria/" target="_blank"><i><img src="./assets/icons/social-media/linkedin-icon.png" alt="LinkedIn Logo" style="display: inline;"></i>/animoconsultoria</li></a>
+            <li><a class="socialMedia" href="https://www.facebook.com/animoconsultoriapage" target="_blank"><img src="../assets/icons/social-media/facebook-icon.png" alt="Facebook Logo" style="display: inline;">/animoconsultoriapage</li></a>
+            <li><a class="socialMedia" href="https://www.instagram.com/animoconsultoria/" target="_blank"><i><img src="../assets/icons/social-media/instagram-icon.png" alt="Instagram Logo" style="display: inline;"></i>@animoconsultoria</li></a>
+            <li><a class="socialMedia" href="https://www.linkedin.com/in/animoconsultoria/" target="_blank"><i><img src="../assets/icons/social-media/linkedin-icon.png" alt="LinkedIn Logo" style="display: inline;"></i>/animoconsultoria</li></a>
           </ul>
         </div>
         <div class="address-container">
