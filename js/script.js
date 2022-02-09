@@ -1,4 +1,4 @@
-// DOM Object/Functions
+//DOM Objects
 let classToToggle = "active";
 const Header = {
   overlay: document.querySelector("#overlay"),
@@ -40,18 +40,32 @@ const Home = {
   },
 };
 
-// Window Onload Functions
-window.onload = () => {
-  Home.setHeight();
-  window.addEventListener("resize", () => {
-    Home.setHeight();
-  });
+//Functions
+function loadServices() {
+  fetch("./data/services.json")
+    .then((response) => response.json())
+    .then((data) => {
+      data.services.forEach((item) => {
+        getService(item);
+      });
+    });
+}
 
-  Header.services.addEventListener("mouseleave", () => {
-    Header.fullSizeDropdown();
+function loadPartners() {
+  fetch("./data/partners.json")
+    .then((response) => response.json())
+    .then((data) => {
+      data.partners.forEach((item) => {
+        getPartner(item);
+      });
+    });
+}
+function delay(n) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, n * 1000);
   });
-
-  // Glider.js Config
+}
+function gliderStart() {
   gliderAutoplay(
     new Glider(document.querySelector(".glider"), {
       slidesToShow: 1,
@@ -86,4 +100,21 @@ window.onload = () => {
       interval: 5000,
     },
   );
+}
+
+//Onload Functions
+window.onload = () => {
+  Home.setHeight();
+  window.addEventListener("resize", () => {
+    Home.setHeight();
+  });
+
+  Header.services.addEventListener("mouseleave", () => {
+    Header.fullSizeDropdown();
+  });
+
+  gliderStart();
 };
+
+loadServices();
+loadPartners();
