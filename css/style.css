@@ -232,6 +232,96 @@ a:hover {
   color: var(--dark-gray);
 }
 
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  cursor: default;
+}
+.cards-container .card {
+  width: 20.6rem;
+  background-color: var(--white);
+  color: var(--dark-gray);
+  height: fit-content;
+  padding: 2rem 1.5rem;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: 0 0 4px #00000029;
+  transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -ms-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+}
+.cards-container .card .icon-container {
+  width: fit-content;
+  margin: 0 auto;
+}
+.cards-container .card .icon-container i {
+  display: block;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.cards-container .card .icon-container i.icon-pie-chart {
+  background-color: var(--light-yellow);
+  color: var(--yellow);
+}
+.cards-container .card .icon-container i.icon-dollar-sign {
+  background-color: var(--light-green);
+  color: var(--green);
+}
+.cards-container .card .icon-container i.icon-trending-up {
+  background-color: var(--light-cyan);
+  color: var(--cyan);
+}
+.cards-container .card .icon-container i.icon-shopping-bag {
+  background-color: var(--light-red);
+  color: var(--red);
+}
+.cards-container .card .icon-container i.icon-globe {
+  background-color: var(--alt-light-blue);
+  color: var(--blue);
+}
+.cards-container .card .icon-container i.icon-smartphone {
+  background-color: var(--light-purple);
+  color: var(--purple);
+}
+.cards-container .card h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.cards-container .card h3 a {
+  font-family: "Montserrat";
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.cards-container .card p {
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+.cards-container .card:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .cards-container {
+    margin-bottom: 2rem;
+  }
+}
+
 #header {
   background-color: var(--dark-dark-blue);
 }
@@ -473,95 +563,6 @@ a:hover {
 @media (max-width: 768px) {
   #services .container .info-container {
     margin-bottom: 3rem;
-  }
-}
-#services .container .cards-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 4rem;
-  cursor: default;
-}
-#services .container .cards-container .card {
-  width: 20.6rem;
-  background-color: var(--white);
-  color: var(--dark-gray);
-  height: fit-content;
-  padding: 2rem 1.5rem;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  box-shadow: 0 0 4px #00000029;
-  transition: all 0.6s ease;
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  -ms-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-}
-#services .container .cards-container .card .icon-container {
-  width: fit-content;
-  margin: 0 auto;
-}
-#services .container .cards-container .card .icon-container i {
-  display: block;
-  font-size: 2rem;
-  padding: 1rem;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  margin-bottom: 1rem;
-}
-#services .container .cards-container .card .icon-container i.icon-pie-chart {
-  background-color: var(--light-yellow);
-  color: var(--yellow);
-}
-#services .container .cards-container .card .icon-container i.icon-dollar-sign {
-  background-color: var(--light-green);
-  color: var(--green);
-}
-#services .container .cards-container .card .icon-container i.icon-trending-up {
-  background-color: var(--light-cyan);
-  color: var(--cyan);
-}
-#services .container .cards-container .card .icon-container i.icon-shopping-bag {
-  background-color: var(--light-red);
-  color: var(--red);
-}
-#services .container .cards-container .card .icon-container i.icon-globe {
-  background-color: var(--alt-light-blue);
-  color: var(--blue);
-}
-#services .container .cards-container .card .icon-container i.icon-smartphone {
-  background-color: var(--light-purple);
-  color: var(--purple);
-}
-#services .container .cards-container .card h3 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-#services .container .cards-container .card h3 a {
-  font-family: "Montserrat";
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-#services .container .cards-container .card p {
-  font-size: 0.9rem;
-  line-height: 1.75;
-}
-#services .container .cards-container .card:hover {
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-}
-@media (max-width: 768px) {
-  #services .container .cards-container {
-    margin-bottom: 2rem;
   }
 }
 
