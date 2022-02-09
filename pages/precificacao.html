@@ -1,12 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Glider.js -->
+  <script src="../vendor/glider-js/glider.min.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="../vendor/glider-js/glider.css">
+  <!-- Script -->
+  <script src="../js/script.js" defer></script>
+  <!-- Icons -->
+  <link rel="stylesheet" href="../assets/icons/icons.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Default Css -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/precificaçao.css">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <title>Precificação | Ânimo Consultoria | Niterói-RJ</title>
 </head>
+
 <body>
-    
+  <div id="overlay" onclick="Menu.Toggle()"></div>
+  <div class="float-icons">
+    <a class="maintenance" href="#" class="icon-container">
+      <i class="icon-mail"></i>
+    </a>
+    <a href="https://api.whatsapp.com/send?phone=+55(number)&text=(message)" class="icon-container">
+      <i class="icon-whatsapp"></i>
+    </a>
+  </div>
+  <header id="header">
+    <div class="container">
+      <div class=" logo-container">
+        <a href=""><img src="../assets/logo.svg" alt="Ânimo Consultoria"></a>
+      </div>
+      <div class="menu-container">
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li class="services-trigger" onclick="Header.fullSizeDropdown()">
+            <a>Serviços</a>
+            <ul class="services-menu">
+              <li><a href="#">Viabilidade e Projeção Financeira</a></li>
+              <li><a href="#">Precificação</a></li>
+              <li><a href="#">Modelo de Negócios</a></li>
+              <li><a href="#">Plano de Marketing</a></li>
+              <li><a href="#">Desenvolvimento de Sites/Sistemas</a></li>
+              <li><a href="#">Gerenciamento de Redes Sociais</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Trabalhe Conosco</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Sobre</a></li>
+        </ul>
+        <ul class="mobile-menu">
+          <li><a href="#">Home</a></li>
+          <li class="services-trigger" onclick="Header.mobileDropdown()">
+            <a>Serviços</a>
+            <ul class="mobile-services-menu">
+              <li><a href="#">Viabilidade e Projeção Financeira</a></li>
+              <li><a href="#">Precificação</a></li>
+              <li><a href="#">Modelo de Negócios</a></li>
+              <li><a href="#">Plano de Marketing</a></li>
+              <li><a href="#">Desenvolvimento de Sites/Sistemas</a></li>
+              <li><a href="#">Gerenciamento de Redes Sociais</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Trabalhe Conosco</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Sobre</a></li>
+        </ul>
+      </div>
+      <div class="icon-container" onclick="Menu.Toggle()">
+        <i class="icon-menu active"></i>
+        <i class="icon-x"></i>
+      </div>
+    </div>
+  </header>
+  <main>
+      <section id="prec-content">
+          <div class="container">
+              <div class="prec-title">
+                  <h1>Precificação <i class="icon-dollar-sign"></i></h1>
+                  <br/>
+                  <span class="prec-description">
+                  <h2>O que é?</h2>
+                  <p>O serviço de precificação tem o objetivo de avaliar os aspectos internos e externos da empresa, adaptando o preço dos seus produtos e serviços de acordo com a intenção do seu negócio.</p>
+                </span>
+                  <br/> 
+                  <span class="prec-method">
+                  <h2>Como trabalhamos?</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda odit non sequi exercitationem ipsa dolor enim aliquid et modi id eos, eaque, iste voluptas quod aliquam eius placeat voluptates?</p>
+                </span>
+                  <br/>  
+                  <span class="prec-itens">            
+                  <h2>O que a precificação oferece?</h2>
+                  <ul>
+                      <li>Controle sobre custo e valor do produto</li>
+                      <li>Melhor estratégia de vendas</li>
+                      <li>Análise de mercado e concorrência</li>
+                  </ul>
+                  <br/>
+                  </span>
+                  <br/>
+                  <span class="prec-contact">
+                      <button type="submit" class="prec-bttn">Agende uma reunião</button>
+                  </span>  
+                    
+                </div>
+          </div>
+
+      </section>
+    <section id="pre-footer">
+      <div class="container">
+        <div class="info-container">
+          <img src="../assets/img/short-logo.png" alt="Ânimo Consultoria - Logo Reduzida">
+          <p>Entre em contato conosco e dê um Ânimo no seu negócio!</p>
+        </div>
+        <div class="links-container">
+          <ul>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#services">Nossos Serviços</a></li>
+            <li><a href="#">Trabalhe Conosco</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+        <div class="social-container">
+          <ul>
+            <li><a class="socialMedia" href="https://www.facebook.com/animoconsultoriapage" target="_blank"><img src="../assets/icons/social-media/facebook-icon.png" alt="Facebook Logo" style="display: inline;">/animoconsultoriapage</li></a>
+            <li><a class="socialMedia" href="https://www.instagram.com/animoconsultoria/" target="_blank"><i><img src="../assets/icons/social-media/instagram-icon.png" alt="Instagram Logo" style="display: inline;"></i>@animoconsultoria</li></a>
+            <li><a class="socialMedia" href="https://www.linkedin.com/in/animoconsultoria/" target="_blank"><i><img src="../assets/icons/social-media/linkedin-icon.png" alt="LinkedIn Logo" style="display: inline;"></i>/animoconsultoria</li></a>
+          </ul>
+        </div>
+        <div class="address-container">
+          <ul>
+            <li><span>Endereço: </span>Rua Gastao Gonçalves
+              Niteroi, RJ 24220-400
+              Brasil</li>
+            <li><span>Telefone: </span>(21) 2199-6600</li>
+            <li><span>Email: </span>contato@animoconsultoria.com.br</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="footer">
+    <span>Copyright &copy; 2022 - Ânimo Consultoria. Todos os Direitos Reservados</span>
+  </footer>
 </body>
+
 </html>
