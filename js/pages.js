@@ -36,7 +36,7 @@ const Menu = {
 function getMenu(item) {
   let servicesMenu = document.createElement("li");
   servicesMenu.innerHTML = `              
-  <a href="${item.url}">${item.title}</a>`;
+  <a href="../${item.url}">${item.title}</a>`;
 
   document.querySelector(".services-menu").appendChild(servicesMenu);
 }
@@ -44,7 +44,7 @@ function getMenu(item) {
 function getMobileMenu(item) {
   let servicesMenu = document.createElement("li");
   servicesMenu.innerHTML = `              
-  <a href="${item.url}">${item.title}</a>`;
+  <a href="../${item.url}">${item.title}</a>`;
 
   document.querySelector(".mobile-services-menu").appendChild(servicesMenu);
 }
@@ -57,7 +57,7 @@ function getServices(item) {
     <div class="icon-container">
       <i class="${item.icon}"></i>
     </div>
-    <h3><a href="${item.url}">${item.title}</a></h3>
+    <h3><a href="../${item.url}">${item.title}</a></h3>
     <p>${
       item.description.length > 200
         ? item.description.substring(0, 170) + "..."
@@ -90,6 +90,10 @@ function loadServices() {
         getMobileMenu(item);
       });
     });
+
+  setTimeout(function () {
+    glideStart();
+  }, 250);
 }
 
 function glideStart() {
@@ -109,13 +113,12 @@ function glideStart() {
     },
   }).mount();
 }
+
 // Onload Functions
 window.onload = () => {
   Header.services.addEventListener("mouseleave", () => {
     Header.fullSizeDropdown();
   });
-
-  glideStart();
 };
 
 loadServices();

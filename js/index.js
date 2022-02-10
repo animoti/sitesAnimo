@@ -92,7 +92,7 @@ function getPartners(item) {
 }
 
 function loadServices() {
-  fetch("../data/services.json")
+  fetch("./data/services.json")
     .then((response) => response.json())
     .then((data) => {
       data.services.forEach((item) => {
@@ -101,6 +101,10 @@ function loadServices() {
         getMobileMenu(item);
       });
     });
+
+  setTimeout(function () {
+    glideStart();
+  }, 250);
 }
 
 function loadPartners() {
@@ -141,8 +145,6 @@ window.onload = () => {
   Header.services.addEventListener("mouseleave", () => {
     Header.fullSizeDropdown();
   });
-
-  glideStart();
 };
 
 loadServices();
