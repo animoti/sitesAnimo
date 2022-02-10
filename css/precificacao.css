@@ -4,7 +4,7 @@ h1 {
     font-weight: bold;
     color: #273e47;
   }
-  li {
+  .prec-title li {
     list-style: inside;
     margin-left: 20px;
     color: #273e47;
