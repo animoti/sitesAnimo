@@ -5,14 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Glider.js -->
-  <script src="./vendor/glider-js/glider.min.js" defer></script>
-  <link rel="stylesheet" type="text/css" href="./vendor/glider-js/glider.css">
+  <!-- Glide.js -->
+  <script src="./vendor/glide-js/glide.min.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="./vendor/glide-js/css/glide.core.css">
+  <link rel="stylesheet" type="text/css" href="./vendor/glide-js/css/glide.theme.css">
   <!-- Scripts -->
-  <script src="./js/functions/Menu.js" defer></script>
-  <script src="./js/functions/Partners.js" defer></script>
-  <script src="./js/functions/Services.js" defer></script>
-  <script src="./js/index.js" defer></script>
+  <script src="./js/index.min.js" defer></script>
   <!-- Icons -->
   <link rel="stylesheet" href="./assets/icons/icons.css">
   <!-- Fonts -->
@@ -20,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <!-- Default Css -->
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style.min.css">
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <title>Ânimo Consultoria | Niterói-RJ</title>
 </head>
@@ -113,14 +111,14 @@
     <section id="partners">
       <div class="container">
         <h2>Nossos Parceiros</h2>
-        <div class="glider-contain">
-          <button aria-label="Voltar" class="arrow prev">«</button>
-          <div class="glider">
+        <div class="glide">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+            </ul>
           </div>
-          <button aria-label="Próximo" class="arrow next">»</button>
+          <div class="glide__bullets" data-glide-el="controls[nav]">
+          </div>
         </div>
-        <div role="tablist" class="dots"></div>
-      </div>
     </section>
     <section id="pre-footer">
       <div class="container">

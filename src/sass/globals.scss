@@ -104,92 +104,81 @@ a {
   }
 }
 
-.cards-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 4rem;
-  cursor: default;
+.card {
+  width: 20.6rem;
+  background-color: var(--white);
+  color: var(--dark-gray);
+  height: fit-content;
+  padding: 2rem 1.5rem;
+  @include border(3px);
+  box-shadow: 0 0 4px #00000029;
+  @include transition;
 
-  .card {
-    width: 20.6rem;
-    background-color: var(--white);
-    color: var(--dark-gray);
-    height: fit-content;
-    padding: 2rem 1.5rem;
-    @include border(3px);
-    box-shadow: 0 0 4px #00000029;
-    @include transition;
+  .icon-container {
+    width: fit-content;
+    margin: 0 auto;
 
-    .icon-container {
-      width: fit-content;
-      margin: 0 auto;
-
-      i {
-        display: block;
-        font-size: 2rem;
-        padding: 1rem;
-        @include border(50%);
-        margin-bottom: 1rem;
-
-        &.icon-pie-chart {
-          background-color: var(--light-yellow);
-          color: var(--yellow);
-        }
-
-        &.icon-dollar-sign {
-          background-color: var(--light-green);
-          color: var(--green);
-        }
-
-        &.icon-trending-up {
-          background-color: var(--light-cyan);
-          color: var(--cyan);
-        }
-
-        &.icon-shopping-bag {
-          background-color: var(--light-red);
-          color: var(--red);
-        }
-
-        &.icon-globe {
-          background-color: var(--alt-light-blue);
-          color: var(--blue);
-        }
-
-        &.icon-smartphone {
-          background-color: var(--light-purple);
-          color: var(--purple);
-        }
-      }
-    }
-
-    h3 {
-      text-align: center;
+    i {
+      display: block;
+      font-size: 2rem;
+      padding: 1rem;
+      @include border(50%);
       margin-bottom: 1rem;
 
-      a {
-        font-family: "Montserrat";
-        font-size: 1.1rem;
-        font-weight: bold;
+      &.icon-pie-chart {
+        background-color: var(--light-yellow);
+        color: var(--yellow);
+      }
+
+      &.icon-dollar-sign {
+        background-color: var(--light-green);
+        color: var(--green);
+      }
+
+      &.icon-trending-up {
+        background-color: var(--light-cyan);
+        color: var(--cyan);
+      }
+
+      &.icon-shopping-bag {
+        background-color: var(--light-red);
+        color: var(--red);
+      }
+
+      &.icon-globe {
+        background-color: var(--alt-light-blue);
+        color: var(--blue);
+      }
+
+      &.icon-smartphone {
+        background-color: var(--light-purple);
+        color: var(--purple);
       }
     }
+  }
 
-    p {
-      font-size: 0.9rem;
-      line-height: 1.75;
-    }
+  h3 {
+    text-align: center;
+    margin-bottom: 1rem;
 
-    &:hover {
-      transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
+    a {
+      font-family: "Montserrat";
+      font-size: 1.1rem;
+      font-weight: bold;
     }
   }
-  @media (max-width: 768px) {
-    margin-bottom: 2rem;
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
   }
 }
 
@@ -434,6 +423,17 @@ a {
         margin-bottom: 3rem;
       }
     }
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4rem;
+      cursor: default;
+
+      @media (max-width: 768px) {
+        margin-bottom: 2rem;
+      }
+    }
   }
 }
 
@@ -496,59 +496,29 @@ a {
     display: block;
     text-align: center;
 
-    .arrow {
-      background-color: transparent;
-      outline: none;
-      border: none;
-      font-size: 5rem;
-      line-height: 1;
-      color: var(--dark-dark-blue);
-      @include transition;
-
-      &:hover {
-        opacity: 0.7;
-      }
-      @media (max-width: 768px) {
-        display: none;
-      }
-    }
-
-    .glider-contain {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .glider-slide {
-      display: flex;
-      align-items: center;
-    }
-
-    .slide-item {
-      width: 12.5rem;
-      height: 12.5rem;
-      background-color: var(--white);
-      @include border(50%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 4px #00000029;
-      margin: 0 auto;
-      opacity: 1;
-
-      img {
-        width: 75%;
-        opacity: 0.7;
-        @include transition;
-      }
-
-      &:hover > img {
+    .glide {
+      .slide-item {
+        width: 12.5rem;
+        height: 12.5rem;
+        background-color: var(--white);
+        @include border(50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 4px #00000029;
+        margin: 1rem auto;
         opacity: 1;
-      }
-    }
 
-    .glider-contain {
-      margin-bottom: 1rem;
+        img {
+          width: 75%;
+          opacity: 0.7;
+          @include transition;
+        }
+
+        &:hover > img {
+          opacity: 1;
+        }
+      }
     }
   }
 }
@@ -617,5 +587,28 @@ a {
 
   span {
     color: var(--white);
+  }
+}
+
+#know-more {
+  background-color: var(--light-light-blue);
+  .container {
+    display: block;
+    .info-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .card {
+      height: 21rem;
+      overflow-y: hidden;
+
+      &:hover {
+        transform: none;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+      }
+    }
   }
 }

@@ -1,0 +1,78 @@
+.glide__arrow {
+  position: absolute;
+  display: block;
+  top: 42%;
+  z-index: 2;
+  color: var(--dark-dark-blue);
+  text-transform: uppercase;
+  padding: 9px 9px;
+  background-color: var(--dark-blue);
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 150ms ease, border 300ms ease-in-out;
+  transform: translateY(-50%);
+  line-height: 1;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.glide__arrow i {
+  font-size: 2rem;
+  color: var(--white);
+}
+.glide__arrow:focus {
+  outline: none;
+}
+.glide__arrow:hover {
+  border-color: white;
+}
+.glide__arrow--left {
+  left: -10em;
+}
+.glide__arrow--right {
+  right: -10em;
+}
+.glide__arrow--disabled {
+  opacity: 0.33;
+}
+.glide__bullets {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.glide__bullet {
+  background-color: #ccc;
+  opacity: 0.5;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  line-height: 0;
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+  margin: 0 0.25em;
+}
+.glide__bullet:hover {
+  border: 2px solid #ccc;
+  background-color: #ccc;
+}
+.glide__bullet--active {
+  opacity: 1;
+  background-color: var(--dark-dark-blue);
+}
+.glide--swipeable {
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+.glide--dragging {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/*# sourceMappingURL=glide.theme.css.map */

@@ -1,5 +1,6 @@
-//DOM Objects
+// Dom Objects
 let classToToggle = "active";
+let bullets = 0;
 const Header = {
   overlay: document.querySelector("#overlay"),
   element: document.querySelector("#header"),
@@ -40,7 +41,7 @@ const Home = {
   },
 };
 
-//Functions
+// Functions
 function getMenu(item) {
   let servicesMenu = document.createElement("li");
   servicesMenu.innerHTML = `              
@@ -57,12 +58,45 @@ function getMobileMenu(item) {
   document.querySelector(".mobile-services-menu").appendChild(servicesMenu);
 }
 
+function getServices(item) {
+  let newService = document.createElement("div");
+  newService.className = "card";
+  newService.innerHTML = `
+  <div class="icon-container">
+    <i class="${item.icon}"></i>
+  </div>
+  <h3><a href="${item.url}">${item.title}</a></h3>
+  <p>${item.description}</p>
+`;
+  document.querySelector(".cards-container").appendChild(newService);
+}
+
+function getPartners(item) {
+  let newPartner = document.createElement("li");
+  newPartner.className = "glide__slide";
+  let path = `../assets/img/partners/${item.name.toLowerCase()}.png`;
+  newPartner.innerHTML = `
+  <a href="${item.url}" class="slide-item" target="_blank">
+    <img src="${path}" alt="Parceiro - ${item.name}">
+  </a>
+`;
+
+  document.querySelector(".glide__slides").appendChild(newPartner);
+
+  let bullet = document.createElement("button");
+  bullet.className = "glide__bullet";
+  bullet.setAttribute("data-glide-dir", "=" + bullets);
+
+  document.querySelector(".glide__bullets").appendChild(bullet);
+  bullets++;
+}
+
 function loadServices() {
   fetch("../data/services.json")
     .then((response) => response.json())
     .then((data) => {
       data.services.forEach((item) => {
-        getService(item);
+        getServices(item);
         getMenu(item);
         getMobileMenu(item);
       });
@@ -74,49 +108,30 @@ function loadPartners() {
     .then((response) => response.json())
     .then((data) => {
       data.partners.forEach((item) => {
-        getPartner(item);
+        getPartners(item);
       });
     });
 }
 
-function gliderStart() {
-  gliderAutoplay(
-    new Glider(document.querySelector(".glider"), {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      dots: ".dots",
-      resizeLock: true,
-      arrows: {
-        prev: ".prev",
-        next: ".next",
+function glideStart() {
+  new Glide(".glide", {
+    autoplay: 5000,
+    type: "carousel",
+    hoverPause: true,
+    startAt: 0,
+    perView: 3,
+    breakpoints: {
+      768: {
+        perView: 2,
       },
-      rewind: true,
-      duration: 2.5,
-
-      responsive: [
-        {
-          breakpoint: 1050,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-          },
-        },
-        {
-          breakpoint: 550,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-          },
-        },
-      ],
-    }),
-    {
-      interval: 5000,
+      425: {
+        perView: 1,
+      },
     },
-  );
+  }).mount();
 }
 
-//Onload Functions
+// Onload Functions
 window.onload = () => {
   Home.setHeight();
   window.addEventListener("resize", () => {
@@ -127,7 +142,7 @@ window.onload = () => {
     Header.fullSizeDropdown();
   });
 
-  gliderStart();
+  glideStart();
 };
 
 loadServices();

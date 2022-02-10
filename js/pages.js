@@ -1,4 +1,6 @@
 let classToToggle = "active";
+let bullets = 0;
+// Dom Objects
 const Header = {
   overlay: document.querySelector("#overlay"),
   element: document.querySelector("#header"),
@@ -30,6 +32,7 @@ const Menu = {
   },
 };
 
+// Functions
 function getMenu(item) {
   let servicesMenu = document.createElement("li");
   servicesMenu.innerHTML = `              
@@ -46,8 +49,9 @@ function getMobileMenu(item) {
   document.querySelector(".mobile-services-menu").appendChild(servicesMenu);
 }
 
-function getService(item) {
-  let newService = document.createElement("div");
+function getServices(item) {
+  let newService = document.createElement("li");
+  newService.className = "glide__slide";
   newService.innerHTML = `
   <div class="card">
     <div class="icon-container">
@@ -56,12 +60,19 @@ function getService(item) {
     <h3><a href="${item.url}">${item.title}</a></h3>
     <p>${
       item.description.length > 200
-        ? item.description.substring(0, 150) + "..."
+        ? item.description.substring(0, 170) + "..."
         : item.description
     }</p>
   </div>
 `;
-  document.querySelector(".cards-container").appendChild(newService);
+  document.querySelector(".glide__slides").appendChild(newService);
+
+  let bullet = document.createElement("button");
+  bullet.className = "glide__bullet";
+  bullet.setAttribute("data-glide-dir", "=" + bullets);
+
+  document.querySelector(".glide__bullets").appendChild(bullet);
+  bullets++;
 }
 
 function loadServices() {
@@ -74,51 +85,37 @@ function loadServices() {
       );
 
       data.services.forEach((item) => {
-        getService(item);
+        getServices(item);
         getMenu(item);
         getMobileMenu(item);
       });
     });
 }
 
-function gliderStart() {
-  new Glider(document.querySelector(".glider"), {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: ".dots",
-    resizeLock: true,
-    arrows: {
-      prev: ".prev",
-      next: ".next",
+function glideStart() {
+  new Glide(".glide", {
+    autoplay: 10000,
+    type: "carousel",
+    hoverPause: true,
+    startAt: 0,
+    perView: 3,
+    breakpoints: {
+      1280: {
+        perView: 2,
+      },
+      896: {
+        perView: 1,
+      },
     },
-    rewind: true,
-    duration: 2.5,
-
-    responsive: [
-      {
-        breakpoint: 1050,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 550,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  });
+  }).mount();
 }
-
+// Onload Functions
 window.onload = () => {
   Header.services.addEventListener("mouseleave", () => {
     Header.fullSizeDropdown();
   });
 
-  gliderStart();
+  glideStart();
 };
 
 loadServices();

@@ -17,14 +17,6 @@ h1 {
 #knowMore .container {
   display: block;
 }
-/* .card {
+.card {
   margin: 1rem auto;
-} */
-
-.card:hover {
-  transform: none;
-  -webkit-transform: none;
-  -moz-transform: none;
-  -ms-transform: none;
-  -o-transform: none;
 }
