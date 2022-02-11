@@ -36,7 +36,7 @@ const Menu = {
 function getMenu(item) {
   let servicesMenu = document.createElement("li");
   servicesMenu.innerHTML = `              
-  <a href="${item.url}">${item.title}</a>`;
+  <a href="../${item.url}">${item.title}</a>`;
 
   document.querySelector(".services-menu").appendChild(servicesMenu);
 }
@@ -44,7 +44,7 @@ function getMenu(item) {
 function getMobileMenu(item) {
   let servicesMenu = document.createElement("li");
   servicesMenu.innerHTML = `              
-  <a href="${item.url}">${item.title}</a>`;
+  <a href="../${item.url}">${item.title}</a>`;
 
   document.querySelector(".mobile-services-menu").appendChild(servicesMenu);
 }
@@ -87,6 +87,10 @@ function loadServices() {
         getMobileMenu(item);
       });
     });
+
+  setTimeout(function () {
+    glideStart();
+  }, 250);
 }
 
 function glideStart() {
@@ -106,13 +110,12 @@ function glideStart() {
     },
   }).mount();
 }
+
 // Onload Functions
 window.onload = () => {
   Header.services.addEventListener("mouseleave", () => {
     Header.fullSizeDropdown();
   });
-
-  glideStart();
 };
 
 loadServices();
