@@ -614,12 +614,22 @@ a {
       }
     }
   }
-
-  .glide__slide--active + .glide__slide a .card {
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
+  @media (min-width: 1280px) {
+    .glide__slide--active + .glide__slide a .card {
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
+  }
+  @media (max-width: 896px) {
+    .glide__slide--active > a .card {
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
   }
 }
