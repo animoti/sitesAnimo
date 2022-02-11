@@ -1,0 +1,16 @@
+#main-content .container{
+    display:block;
+}
+h4{
+    opacity:0.8;
+}
+h1{
+    font-family:'Georgia';
+    font-weight:bold;
+    font-size:xx-large;
+    color:var(--dark-dark-blue);
+}
+.button{
+    text-align: center;
+    position:relative;
+}
