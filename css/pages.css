@@ -1,16 +1,32 @@
-#main-content .container{
-    display:block;
+
+#main-content .container {
+  display: block;
 }
+div .text {
+  border: 1px;
+}
+h1 {
+  padding-left: 25px;
+  padding-bottom: 15px;
+  color: var(--dark-dark-blue);
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 0.325rem;
+}
+
 h4{
     opacity:0.8;
 }
-h1{
-    font-family:'Georgia';
-    font-weight:bold;
-    font-size:xx-large;
-    color:var(--dark-dark-blue);
-}
+
 .button{
     text-align: center;
     position:relative;
+}
+
+#knowMore .container {
+  display: block;
+}
+.card {
+  margin: 1rem auto;
 }

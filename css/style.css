@@ -232,6 +232,79 @@ a:hover {
   color: var(--dark-gray);
 }
 
+.card {
+  width: 20.6rem;
+  background-color: var(--white);
+  color: var(--dark-gray);
+  height: fit-content;
+  padding: 2rem 1.5rem;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: 0 0 4px #00000029;
+  transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -ms-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+}
+.card .icon-container {
+  width: fit-content;
+  margin: 0 auto;
+}
+.card .icon-container i {
+  display: block;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.card .icon-container i.icon-pie-chart {
+  background-color: var(--light-yellow);
+  color: var(--yellow);
+}
+.card .icon-container i.icon-dollar-sign {
+  background-color: var(--light-green);
+  color: var(--green);
+}
+.card .icon-container i.icon-trending-up {
+  background-color: var(--light-cyan);
+  color: var(--cyan);
+}
+.card .icon-container i.icon-shopping-bag {
+  background-color: var(--light-red);
+  color: var(--red);
+}
+.card .icon-container i.icon-globe {
+  background-color: var(--alt-light-blue);
+  color: var(--blue);
+}
+.card .icon-container i.icon-smartphone {
+  background-color: var(--light-purple);
+  color: var(--purple);
+}
+.card h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+.card:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
 #header {
   background-color: var(--dark-dark-blue);
 }
@@ -482,83 +555,6 @@ a:hover {
   gap: 4rem;
   cursor: default;
 }
-#services .container .cards-container .card {
-  width: 20.6rem;
-  background-color: var(--white);
-  color: var(--dark-gray);
-  height: fit-content;
-  padding: 2rem 1.5rem;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  box-shadow: 0 0 4px #00000029;
-  transition: all 0.6s ease;
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  -ms-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-}
-#services .container .cards-container .card .icon-container {
-  width: fit-content;
-  margin: 0 auto;
-}
-#services .container .cards-container .card .icon-container i {
-  display: block;
-  font-size: 2rem;
-  padding: 1rem;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  margin-bottom: 1rem;
-}
-#services .container .cards-container .card .icon-container i.icon-pie-chart {
-  background-color: var(--light-yellow);
-  color: var(--yellow);
-}
-#services .container .cards-container .card .icon-container i.icon-dollar-sign {
-  background-color: var(--light-green);
-  color: var(--green);
-}
-#services .container .cards-container .card .icon-container i.icon-trending-up {
-  background-color: var(--light-cyan);
-  color: var(--cyan);
-}
-#services .container .cards-container .card .icon-container i.icon-shopping-bag {
-  background-color: var(--light-red);
-  color: var(--red);
-}
-#services .container .cards-container .card .icon-container i.icon-globe {
-  background-color: var(--alt-light-blue);
-  color: var(--blue);
-}
-#services .container .cards-container .card .icon-container i.icon-smartphone {
-  background-color: var(--light-purple);
-  color: var(--purple);
-}
-#services .container .cards-container .card h3 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-#services .container .cards-container .card h3 a {
-  font-family: "Montserrat";
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-#services .container .cards-container .card p {
-  font-size: 0.9rem;
-  line-height: 1.75;
-}
-#services .container .cards-container .card:hover {
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-}
 @media (max-width: 768px) {
   #services .container .cards-container {
     margin-bottom: 2rem;
@@ -628,38 +624,7 @@ a:hover {
   display: block;
   text-align: center;
 }
-#partners .container .glider-contain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-#partners .container .glider-contain .arrow {
-  background-color: transparent;
-  outline: none;
-  border: none;
-  font-size: 5rem;
-  line-height: 1;
-  color: var(--dark-dark-blue);
-  transition: all 0.6s ease;
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  -ms-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-}
-#partners .container .glider-contain .arrow:hover {
-  opacity: 0.7;
-}
-@media (max-width: 768px) {
-  #partners .container .glider-contain .arrow {
-    display: none;
-  }
-}
-#partners .container .glider-slide {
-  display: flex;
-  align-items: center;
-}
-#partners .container .slide-item {
+#partners .container .glide .slide-item {
   width: 12.5rem;
   height: 12.5rem;
   background-color: var(--white);
@@ -672,10 +637,10 @@ a:hover {
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 4px #00000029;
-  margin: 0.1rem;
+  margin: 1rem auto;
   opacity: 1;
 }
-#partners .container .slide-item img {
+#partners .container .glide .slide-item img {
   width: 75%;
   opacity: 0.7;
   transition: all 0.6s ease;
@@ -684,11 +649,8 @@ a:hover {
   -ms-transition: all 0.6s ease;
   -o-transition: all 0.6s ease;
 }
-#partners .container .slide-item:hover > img {
+#partners .container .glide .slide-item:hover > img {
   opacity: 1;
-}
-#partners .container .glider-contain {
-  margin-bottom: 1rem;
 }
 
 #pre-footer .container {
@@ -741,6 +703,54 @@ a:hover {
 }
 #footer span {
   color: var(--white);
+}
+
+#know-more {
+  background-color: var(--light-light-blue);
+}
+#know-more .container {
+  display: block;
+}
+#know-more .container .info-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#know-more .container .card {
+  height: 12rem;
+  display: block;
+}
+#know-more .container .card h3 {
+  -webkit-font-smoothing: subpixel-antialiased;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  font-family: "Montserrat";
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+#know-more .container .card:hover {
+  transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+}
+@media (min-width: 1280px) {
+  #know-more .glide__slide--active + .glide__slide a .card {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+}
+@media (max-width: 896px) {
+  #know-more .glide__slide--active > a .card {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

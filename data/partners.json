@@ -1,0 +1,19 @@
+{
+  "partners": [{
+    "name": "Lasalle",
+    "url": "https://www.unilasalle.edu.br/rj/"
+  },
+  {
+    "name": "Faperj",
+    "url": "http://www.faperj.br/"
+  },
+  {
+    "name": "Motim",
+    "url": "https://www.motim.me/"
+  },
+  {
+    "name": "RioJunior",
+    "url": "http://riojunior.com.br/"
+  }
+]
+}
