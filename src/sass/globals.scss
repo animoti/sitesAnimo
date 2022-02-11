@@ -160,12 +160,6 @@ a {
   h3 {
     text-align: center;
     margin-bottom: 1rem;
-
-    a {
-      font-family: "Montserrat";
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
   }
 
   p {
@@ -599,8 +593,17 @@ a {
       margin-bottom: 2rem;
     }
     .card {
-      height: 21rem;
-      overflow-y: hidden;
+      height: 12rem;
+      display: block;
+
+      h3 {
+        -webkit-font-smoothing: subpixel-antialiased;
+        filter: blur(0);
+        -webkit-filter: blur(0);
+        font-family: "Montserrat";
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
 
       &:hover {
         transform: none;
@@ -610,5 +613,13 @@ a {
         -o-transform: none;
       }
     }
+  }
+
+  .glide__slide--active + .glide__slide a .card {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
   }
 }

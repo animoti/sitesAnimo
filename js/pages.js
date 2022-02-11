@@ -53,17 +53,14 @@ function getServices(item) {
   let newService = document.createElement("li");
   newService.className = "glide__slide";
   newService.innerHTML = `
-  <div class="card">
-    <div class="icon-container">
-      <i class="${item.icon}"></i>
+  <a href="${item.url}">
+    <div class="card">
+      <div class="icon-container">
+        <i class="${item.icon}"></i>
+      </div>
+      <h3>${item.title}</h3>
     </div>
-    <h3><a href="${item.url}">${item.title}</a></h3>
-    <p>${
-      item.description.length > 200
-        ? item.description.substring(0, 170) + "..."
-        : item.description
-    }</p>
-  </div>
+  </a>
 `;
   document.querySelector(".glide__slides").appendChild(newService);
 
