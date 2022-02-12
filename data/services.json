@@ -1,13 +1,13 @@
 {
   "services": [{
     "title": "Viabilidade e projeção financeira", 
-    "url": "./",
+    "url": "./pages/feasibility-financial.html",
     "icon": "icon-pie-chart",
     "description": "Nossas consultorias possibilitam uma visão ampla de planejamento e gerenciamento da sua empresa. A projeção financeira é útil para as relações com futuros investidores além de ser uma importante ferramenta de diagnóstico financeiro"
   },
   {
     "title": "Precificação", 
-    "url": "./",
+    "url": "./pages/pricing.html",
     "icon": "icon-dollar-sign",
     "description": "O serviço de precificação tem o objetivo de avaliar os aspectos internos e externos da empresa, adaptando o preço dos seus produtos e serviços de acordo com a intenção do seu negócio."
   },
