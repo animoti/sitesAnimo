@@ -1,4 +1,5 @@
 // Dom Objects
+const pageData = document.querySelector("body").getAttribute("pagedata");
 let classToToggle = "active";
 let bullets = 0;
 const Header = {
@@ -45,7 +46,7 @@ const Home = {
 function getMenu(item) {
   let servicesMenu = document.createElement("li");
   servicesMenu.innerHTML = `              
-  <a href="${item.url}">${item.title}</a>`;
+  <a href="${pageData == "index" ? "./" : "../"}${item.url}">${item.title}</a>`;
 
   document.querySelector(".services-menu").appendChild(servicesMenu);
 }
@@ -59,42 +60,74 @@ function getMobileMenu(item) {
 }
 
 function getServices(item) {
-  let newService = document.createElement("div");
-  newService.className = "card";
-  newService.innerHTML = `
-  <div class="icon-container">
-    <i class="${item.icon}"></i>
-  </div>
-  <h3><a href="${item.url}">${item.title}</a></h3>
-  <p>${item.description}</p>
-`;
-  document.querySelector(".cards-container").appendChild(newService);
+  if (pageData == "index") {
+    let newService = document.createElement("div");
+    newService.className = "card";
+    newService.innerHTML = `
+    <div class="icon-container">
+      <i class="${item.icon}"></i>
+    </div>
+    <h3><a href="${item.url}">${item.title}</a></h3>
+    <p>${item.description}</p>
+  `;
+    document.querySelector(".cards-container").appendChild(newService);
+  } else if (pageData == "pages") {
+    let newService = document.createElement("li");
+    newService.className = "glide__slide";
+    newService.innerHTML = `
+    <a href="${item.url}">
+      <div class="card">
+        <div class="icon-container">
+          <i class="${item.icon}"></i>
+        </div>
+        <h3>${item.title}</h3>
+      </div>
+    </a>
+  `;
+    document.querySelector(".glide__slides").appendChild(newService);
+
+    let bullet = document.createElement("button");
+    bullet.className = "glide__bullet";
+    bullet.setAttribute("data-glide-dir", "=" + bullets);
+
+    document.querySelector(".glide__bullets").appendChild(bullet);
+    bullets++;
+  }
 }
 
 function getPartners(item) {
-  let newPartner = document.createElement("li");
-  newPartner.className = "glide__slide";
-  let path = `../assets/img/partners/${item.name.toLowerCase()}.png`;
-  newPartner.innerHTML = `
+  if (pageData == "index") {
+    let newPartner = document.createElement("li");
+    newPartner.className = "glide__slide";
+    let path = `../assets/img/partners/${item.name.toLowerCase()}.png`;
+    newPartner.innerHTML = `
   <a href="${item.url}" class="slide-item" target="_blank">
     <img src="${path}" alt="Parceiro - ${item.name}">
   </a>
 `;
 
-  document.querySelector(".glide__slides").appendChild(newPartner);
+    document.querySelector(".glide__slides").appendChild(newPartner);
 
-  let bullet = document.createElement("button");
-  bullet.className = "glide__bullet";
-  bullet.setAttribute("data-glide-dir", "=" + bullets);
+    let bullet = document.createElement("button");
+    bullet.className = "glide__bullet";
+    bullet.setAttribute("data-glide-dir", "=" + bullets);
 
-  document.querySelector(".glide__bullets").appendChild(bullet);
-  bullets++;
+    document.querySelector(".glide__bullets").appendChild(bullet);
+    bullets++;
+  }
 }
 
 function loadServices() {
-  fetch("./data/services.json")
+  fetch("../data/services.json")
     .then((response) => response.json())
     .then((data) => {
+      if (pageData == "pages") {
+        data.services = data.services.filter(
+          (item) =>
+            item.title !==
+            document.querySelector(".info-container h1").innerHTML,
+        );
+      }
       data.services.forEach((item) => {
         getServices(item);
         getMenu(item);
@@ -108,7 +141,7 @@ function loadServices() {
 }
 
 function loadPartners() {
-  fetch("./data/partners.json")
+  fetch("../data/partners.json")
     .then((response) => response.json())
     .then((data) => {
       data.partners.forEach((item) => {
@@ -118,29 +151,49 @@ function loadPartners() {
 }
 
 function glideStart() {
-  new Glide(".glide", {
-    autoplay: 5000,
-    type: "carousel",
-    hoverPause: true,
-    startAt: 0,
-    perView: 3,
-    breakpoints: {
-      768: {
-        perView: 2,
+  if (pageData == "index") {
+    new Glide(".glide", {
+      autoplay: 5000,
+      type: "carousel",
+      hoverPause: true,
+      startAt: 0,
+      perView: 3,
+      breakpoints: {
+        768: {
+          perView: 2,
+        },
+        425: {
+          perView: 1,
+        },
       },
-      425: {
-        perView: 1,
+    }).mount();
+  } else {
+    new Glide(".glide", {
+      autoplay: 8000,
+      type: "carousel",
+      hoverPause: true,
+      startAt: 0,
+      perView: 3,
+      breakpoints: {
+        1280: {
+          perView: 2,
+        },
+        896: {
+          perView: 1,
+        },
       },
-    },
-  }).mount();
+    }).mount();
+  }
 }
 
 // Onload Functions
 window.onload = () => {
-  Home.setHeight();
-  window.addEventListener("resize", () => {
+  if (Home.element) {
     Home.setHeight();
-  });
+    window.addEventListener("resize", () => {
+      Home.setHeight();
+    });
+  }
 
   Header.services.addEventListener("mouseleave", () => {
     Header.fullSizeDropdown();
