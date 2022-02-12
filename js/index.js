@@ -75,7 +75,7 @@ function getServices(item) {
     let newService = document.createElement("li");
     newService.className = "glide__slide";
     newService.innerHTML = `
-    <a href="${item.url}">
+    <a href="../${item.url}">
       <div class="card">
         <div class="icon-container">
           <i class="${item.icon}"></i>

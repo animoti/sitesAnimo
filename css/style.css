@@ -718,6 +718,7 @@ a:hover {
 #know-more .container .card {
   height: 12rem;
   display: block;
+  margin: 1rem auto;
 }
 #know-more .container .card h3 {
   -webkit-font-smoothing: subpixel-antialiased;
