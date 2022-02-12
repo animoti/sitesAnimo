@@ -54,7 +54,7 @@ function getMenu(item) {
 function getMobileMenu(item) {
   let servicesMenu = document.createElement("li");
   servicesMenu.innerHTML = `              
-  <a href="${item.url}">${item.title}</a>`;
+  <a href="${pageData == "index" ? "./" : "../"}${item.url}">${item.title}</a>`;
 
   document.querySelector(".mobile-services-menu").appendChild(servicesMenu);
 }

@@ -780,11 +780,42 @@ a:hover {
 #about-page-purpose {
   margin-top: -5rem;
 }
+<<<<<<< HEAD
 #about-page-purpose .container {
   display: block;
 }
 #about-page-purpose .container .info-container p {
   margin-bottom: 2rem;
+=======
+@media (max-width: 768px) {
+  #about-page-purpose {
+    margin-top: -1.5rem;
+  }
+}
+#about-page-purpose .container {
+  display: block;
+}
+#about-page-purpose .container .info-container h2 {
+  display: flex;
+  align-items: center;
+}
+#about-page-purpose .container .info-container h2::before {
+  display: inline-block;
+  content: "";
+  margin-right: 0.5rem;
+  border-top: 0.4rem solid;
+  border-right: 0.4rem solid transparent;
+  border-left: 0;
+  border-left: 0.4rem solid transparent;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+#about-page-purpose .container .info-container p {
+  margin: 0 0 1rem 2rem;
+>>>>>>> 1c1fbb8525dfd5d1e632b417bd9026da738179de
 }
 
 #gallery .container {
