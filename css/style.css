@@ -165,7 +165,8 @@ h6 {
   }
 }
 
-h2 {
+h2,
+h1 {
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 2rem;
@@ -187,6 +188,13 @@ a {
 }
 a:hover {
   opacity: 0.7;
+}
+
+.line {
+  display: block;
+  background-color: rgba(37, 49, 55, 0.1);
+  width: 100%;
+  height: 1px;
 }
 
 .button a {
@@ -752,6 +760,61 @@ a:hover {
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
   }
+}
+
+#about .container {
+  gap: 12rem;
+}
+#about .container .info-container h1 {
+  font-size: 2.7rem;
+  color: var(--dark-dark-blue);
+}
+@media (max-width: 768px) {
+  #about .container {
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+  }
+}
+
+#about-page-purpose {
+  margin-top: -5rem;
+}
+@media (max-width: 768px) {
+  #about-page-purpose {
+    margin-top: -1.5rem;
+  }
+}
+#about-page-purpose .container {
+  display: block;
+}
+#about-page-purpose .container .info-container h2 {
+  display: flex;
+  align-items: center;
+}
+#about-page-purpose .container .info-container h2::before {
+  display: inline-block;
+  content: "";
+  margin-right: 0.5rem;
+  border-top: 0.4rem solid;
+  border-right: 0.4rem solid transparent;
+  border-left: 0;
+  border-left: 0.4rem solid transparent;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+#about-page-purpose .container .info-container p {
+  margin: 0 0 1rem 2rem;
+}
+
+#gallery .container {
+  display: block;
+}
+#gallery .container h2 {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

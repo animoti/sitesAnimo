@@ -54,7 +54,7 @@ function getMenu(item) {
 function getMobileMenu(item) {
   let servicesMenu = document.createElement("li");
   servicesMenu.innerHTML = `              
-  <a href="${item.url}">${item.title}</a>`;
+  <a href="${pageData == "index" ? "./" : "../"}${item.url}">${item.title}</a>`;
 
   document.querySelector(".mobile-services-menu").appendChild(servicesMenu);
 }
@@ -92,11 +92,13 @@ function getServices(item) {
 
     document.querySelector(".glide__bullets").appendChild(bullet);
     bullets++;
+  } else {
+    return;
   }
 }
 
 function getPartners(item) {
-  if (pageData == "index") {
+  if (pageData == "index" || pageData == "about") {
     let newPartner = document.createElement("li");
     newPartner.className = "glide__slide";
     let path = `../assets/img/partners/${item.name.toLowerCase()}.png`;
@@ -151,7 +153,7 @@ function loadPartners() {
 }
 
 function glideStart() {
-  if (pageData == "index") {
+  if (pageData == "index" || pageData == "about") {
     new Glide(".glide", {
       autoplay: 5000,
       type: "carousel",
@@ -167,7 +169,7 @@ function glideStart() {
         },
       },
     }).mount();
-  } else {
+  } else if (pageData == "pages") {
     new Glide(".glide", {
       autoplay: 8000,
       type: "carousel",
