@@ -1,4 +1,29 @@
-
+/*#prec-content {
+  border-radius: 16px;
+  box-shadow: 0 10px 10px rgb(0 0 0 / 10%);
+  margin: 20px 0;
+  padding: 30px;
+  width: 900px;
+  display: block;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  #prec-content {
+    width: 500px;
+  }
+}
+.prec-bttn {
+  display: block;
+  margin: 0 auto;
+  background-color: #273e47;
+  border-radius: 16px;
+  padding: 20px;
+  color: white;
+}
+.prec-bttn:hover {
+  background-color: #1e2f36;
+  transition: all 100ms ease-in-out;
+}
 #main-content .container {
   display: block;
 }
@@ -29,4 +54,4 @@ h4{
 }
 .card {
   margin: 1rem auto;
-}
+} */
