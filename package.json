@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts" : {
-    "dev" : "sass --watch src/sass/globals.scss:css/style.css",
-    "build" : "sass src/sass/globals.scss:css/style.min.css -s compressed"
+    "dev" : "sass --watch src/sass/globals.scss:src/styles/style.css",
+    "build" : "sass src/sass/globals.scss:src/styles/style.min.css -s compressed"
   },
   "devDependencies": {
     "sass": "^1.49.0"

@@ -16,22 +16,23 @@
   <link rel="stylesheet" type="text/css" href="../vendor/glide-js/css/glide.theme.css">
 
   <!-- Script -->
-  <script src="../js/index.js" defer></script>
+  <script src="../src/js/index.js" defer></script>
 
   <!-- Icons -->
-  <link rel="stylesheet" href="../assets/icons/icons.css">
+  <link rel="stylesheet" href="../src//assets/icons/icons.css">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- Default Css -->
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../src/styles/style.css">
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 </head>
 
 <body pagedata="pages">
+  <div id="overlay" onclick="Menu.Toggle()"></div>
   <div class="float-icons">
     <a class="maintenance" href="#" class="icon-container">
       <i class="icon-mail"></i>
@@ -43,7 +44,7 @@
   <header id="header">
     <div class="container">
       <div class="logo-container">
-        <a href="../index.html"><img src="../assets/logo.svg" alt="Ânimo Consultoria"></a>
+        <a href="../index.html"><img src="../src/assets/logo.svg" alt="Ânimo Consultoria"></a>
       </div>
       <div class="menu-container">
         <ul class="menu">
@@ -69,9 +70,9 @@
           <li><a href="./about.html">Sobre</a></li>
         </ul>
       </div>
-      <div class="icon-container" onclick="Menu.Toggle()">
-        <i class="icon-menu active"></i>
-        <i class="icon-x"></i>
+      <div class="toggle-buttons-container" onclick="Menu.Toggle()">
+        <button class="active"><i class="icon-menu"></i></button>
+        <button><i class="icon-x"></i></button>
       </div>
     </div>
   </header>
@@ -115,7 +116,7 @@
     <section id="pre-footer">
       <div class="container">
         <div class="info-container">
-          <img src="../assets/img/short-logo.png" alt="Ânimo Consultoria - Logo Reduzida">
+          <img src="../src/assets/img/short-logo.png" alt="Ânimo Consultoria - Logo Reduzida">
           <p>Entre em contato conosco e dê um Ânimo no seu negócio!</p>
         </div>
         <div class="links-container">
@@ -128,9 +129,9 @@
         </div>
         <div class="social-container">
           <ul>
-            <li><a class="socialMedia" href="https://www.facebook.com/animoconsultoriapage" target="_blank"><img src="../assets/icons/social-media/facebook-icon.png" alt="Facebook Logo" style="display: inline;">/animoconsultoriapage</li></a>
-            <li><a class="socialMedia" href="https://www.instagram.com/animoconsultoria/" target="_blank"><i><img src="../assets/icons/social-media/instagram-icon.png" alt="Instagram Logo" style="display: inline;"></i>@animoconsultoria</li></a>
-            <li><a class="socialMedia" href="https://www.linkedin.com/in/animoconsultoria/" target="_blank"><i><img src="../assets/icons/social-media/linkedin-icon.png" alt="LinkedIn Logo" style="display: inline;"></i>/animoconsultoria</li></a>
+            <li><a class="socialMedia" href="https://www.facebook.com/animoconsultoriapage" target="_blank"><img src="../src/assets/icons/social-media/facebook-icon.png" alt="Facebook Logo" style="display: inline;">/animoconsultoriapage</li></a>
+            <li><a class="socialMedia" href="https://www.instagram.com/animoconsultoria/" target="_blank"><i><img src="../src/assets/icons/social-media/instagram-icon.png" alt="Instagram Logo" style="display: inline;"></i>@animoconsultoria</li></a>
+            <li><a class="socialMedia" href="https://www.linkedin.com/in/animoconsultoria/" target="_blank"><i><img src="../src/assets/icons/social-media/linkedin-icon.png" alt="LinkedIn Logo" style="display: inline;"></i>/animoconsultoria</li></a>
           </ul>
         </div>
         <div class="address-container">

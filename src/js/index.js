@@ -23,7 +23,7 @@ const Header = {
 };
 
 const Menu = {
-  button: document.querySelectorAll(".icon-container i"),
+  button: document.querySelectorAll(".toggle-buttons-container button"),
   Toggle() {
     this.button.forEach((item) => {
       item.classList.toggle(classToToggle);
@@ -101,7 +101,7 @@ function getPartners(item) {
   if (pageData == "index" || pageData == "about") {
     let newPartner = document.createElement("li");
     newPartner.className = "glide__slide";
-    let path = `../assets/img/partners/${item.name.toLowerCase()}.png`;
+    let path = `../src/assets/img/partners/${item.name.toLowerCase()}.png`;
     newPartner.innerHTML = `
   <a href="${item.url}" class="slide-item" target="_blank">
     <img src="${path}" alt="Parceiro - ${item.name}">
@@ -120,7 +120,7 @@ function getPartners(item) {
 }
 
 function loadServices() {
-  fetch("../data/services.json")
+  fetch("../src/data/services.json")
     .then((response) => response.json())
     .then((data) => {
       if (pageData == "pages") {
@@ -143,7 +143,7 @@ function loadServices() {
 }
 
 function loadPartners() {
-  fetch("../data/partners.json")
+  fetch("../src/data/partners.json")
     .then((response) => response.json())
     .then((data) => {
       data.partners.forEach((item) => {
