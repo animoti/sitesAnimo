@@ -1,12 +1,28 @@
 #main-content .container {
   display: block;
 }
+@media (max-width: 768px) {
+  #main-content .container span {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
 #main-content .container .info-container {
   margin: 0 0 2rem 1rem;
+}
+@media (max-width: 768px) {
+  #main-content .container .info-container {
+    margin-left: 0;
+  }
 }
 #main-content .container .info-container h1 {
   display: flex;
   align-items: center;
+}
+@media (max-width: 768px) {
+  #main-content .container .info-container h1 {
+    margin-left: 0;
+  }
 }
 #main-content .container .info-container h1::before {
   display: inline-block;
@@ -25,9 +41,19 @@
 #main-content .container .info-container p {
   margin-left: 1.5rem;
 }
+@media (max-width: 768px) {
+  #main-content .container .info-container p {
+    margin-left: 0;
+  }
+}
 #main-content .container .info {
   margin-left: 2.5rem;
   margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  #main-content .container .info {
+    margin-left: 0;
+  }
 }
 #main-content .container .benefits {
   margin-top: 3rem;
@@ -53,6 +79,11 @@
 #main-content .container .benefits ul {
   margin-left: 2.625rem;
   list-style: disc;
+}
+@media (max-width: 768px) {
+  #main-content .container .benefits ul {
+    margin-left: 0;
+  }
 }
 #main-content .container .button {
   margin-top: 3rem;
