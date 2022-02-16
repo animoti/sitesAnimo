@@ -1,57 +1,62 @@
-/*#prec-content {
-  border-radius: 16px;
-  box-shadow: 0 10px 10px rgb(0 0 0 / 10%);
-  margin: 20px 0;
-  padding: 30px;
-  width: 900px;
-  display: block;
-  margin: 0 auto;
-}
-@media (max-width: 768px) {
-  #prec-content {
-    width: 500px;
-  }
-}
-.prec-bttn {
-  display: block;
-  margin: 0 auto;
-  background-color: #273e47;
-  border-radius: 16px;
-  padding: 20px;
-  color: white;
-}
-.prec-bttn:hover {
-  background-color: #1e2f36;
-  transition: all 100ms ease-in-out;
-}
 #main-content .container {
   display: block;
 }
-div .text {
-  border: 1px;
+#main-content .container .info-container {
+  margin: 0 0 2rem 1rem;
 }
-h1 {
-  padding-left: 25px;
-  padding-bottom: 15px;
-  color: var(--dark-dark-blue);
-  font-family: "Montserrat";
-  font-weight: bold;
-  font-size: 2.5rem;
-  margin-bottom: 0.325rem;
+#main-content .container .info-container h1 {
+  display: flex;
+  align-items: center;
+}
+#main-content .container .info-container h1::before {
+  display: inline-block;
+  margin-right: 0.5rem;
+  content: "";
+  border-top: 0.4rem solid;
+  border-right: 0.4rem solid transparent;
+  border-left: 0;
+  border-left: 0.4rem solid transparent;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+#main-content .container .info-container p {
+  margin-left: 1.5rem;
+}
+#main-content .container .info {
+  margin-left: 2.5rem;
+  margin-bottom: 1rem;
+}
+#main-content .container .benefits {
+  margin-top: 3rem;
+}
+#main-content .container .benefits h2 {
+  display: flex;
+  align-items: center;
+}
+#main-content .container .benefits h2::before {
+  display: inline-block;
+  margin-right: 0.5rem;
+  content: "";
+  border-top: 0.4rem solid;
+  border-right: 0.4rem solid transparent;
+  border-left: 0;
+  border-left: 0.4rem solid transparent;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+#main-content .container .benefits ul {
+  margin-left: 2.625rem;
+  list-style: disc;
+}
+#main-content .container .button {
+  margin-top: 3rem;
+  text-align: center;
 }
 
-h4{
-    opacity:0.8;
-}
-
-.button{
-    text-align: center;
-    position:relative;
-}
-
-#knowMore .container {
-  display: block;
-}
-.card {
-  margin: 1rem auto;
-} */
+/*# sourceMappingURL=pages.css.map */

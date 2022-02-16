@@ -5,6 +5,7 @@
 // Components
 :root {
   --dark-dark-blue: #263238;
+  --text-body: #222222;
   --dark-blue: #273e47;
   --light-light-blue: #f7f9fa;
   --light-blue: #58a7c7;
@@ -47,18 +48,31 @@
   @include resolution;
 }
 
+h1,
 h2,
-h1 {
+h3,
+h4,
+h5,
+h6 {
   font-family: "Montserrat";
   font-weight: bold;
+  color: var(--dark-dark-blue);
+}
+
+h2 {
   font-size: 2rem;
   margin-bottom: 0.325rem;
 }
 
-h2,
+h1 {
+  font-size: 2.8rem;
+  line-height: 1.3;
+  margin-bottom: 1.325rem;
+}
+
 a,
 p {
-  color: var(--dark-dark-blue);
+  color: var(--text-body);
 }
 
 a {
@@ -342,12 +356,10 @@ a {
       button {
         display: block;
         position: absolute;
-        background-color: transparent;
         color: var(--white);
         opacity: 0;
         visibility: hidden;
         font-size: 1.8rem;
-        top: -0.5rem;
         cursor: pointer;
         @include transition();
 
@@ -378,10 +390,6 @@ a {
       width: min(25rem, 100%);
 
       h1 {
-        font-family: "Montserrat";
-        font-weight: bold;
-        font-size: 2.5rem;
-        line-height: 1.3;
         margin-bottom: 0.5rem;
 
         @media (max-width: 768px) {
@@ -653,12 +661,6 @@ a {
 #about {
   .container {
     gap: 4rem;
-    .info-container {
-      h1 {
-        font-size: 2.7rem;
-        color: var(--dark-dark-blue);
-      }
-    }
 
     @media (max-width: 768px) {
       flex-direction: column;

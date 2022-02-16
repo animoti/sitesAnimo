@@ -63,6 +63,12 @@ select {
 }
 button {
   cursor: pointer;
+  overflow: visible;
+  background: transparent;
+  line-height: 0;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
 }
 p,
 h1,
