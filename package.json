@@ -5,13 +5,16 @@
   "main": "index.js",
   "engines": {
     "node": "12.11.1"
-    },
-  "scripts" : {
+  },
+  "scripts": {
     "start": "node index.js",
-    "dev" : "sass --watch src/sass/globals.scss:css/style.css",
-    "build" : "sass src/sass/globals.scss:css/style.css -s compressed"
+    "dev": "sass --watch src/sass/globals.scss:css/style.css",
+    "build": "sass src/sass/globals.scss:css/style.css -s compressed"
   },
   "devDependencies": {
     "sass": "^1.49.0"
+  },
+  "dependencies": {
+    "serve": "^13.0.2"
   }
 }
