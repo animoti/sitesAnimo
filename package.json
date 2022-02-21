@@ -1,7 +1,7 @@
 {
   "name": "animoconsultoria",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.html",
   "engines": {
     "node": "12.11.1"
   },

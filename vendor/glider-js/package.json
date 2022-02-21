@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "http-server docs/",
+    "start": "node index.html",
     "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
   },
   "repository": {
