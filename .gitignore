@@ -1,1 +1,4 @@
 .DS_Store
+package.json
+yarn-error.log
+yarn.lock
