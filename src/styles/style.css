@@ -809,6 +809,11 @@ a:hover {
 #about-page-purpose {
   margin-top: -5rem;
 }
+@media (max-width: 768px) {
+  #about-page-purpose {
+    margin-top: -2rem;
+  }
+}
 #about-page-purpose .container {
   display: block;
 }

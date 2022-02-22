@@ -686,6 +686,11 @@ a {
 
 #about-page-purpose {
   margin-top: -5rem;
+
+  @media (max-width: 768px) {
+    margin-top: -2rem;
+  }
+
   .container {
     display: block;
     .info-container {
