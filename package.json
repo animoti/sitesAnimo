@@ -10,9 +10,7 @@
     "dev": "sass --watch src/sass/globals.scss:css/style.css",
     "build": "sass src/sass/globals.scss:css/style.css -s compressed"
   },
-  "devDependencies": {
-    "sass": "^1.49.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "serve": "^13.0.2"
   }
