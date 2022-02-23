@@ -43,82 +43,48 @@ const Home = {
 };
 
 // Functions
-function getMenu(item) {
-  let servicesMenu = document.createElement("li");
-  servicesMenu.innerHTML = `              
-  <a href="${pageData == "index" ? "./" : "../"}${item.url}">${item.title}</a>`;
+function getDesktopMenuItem(service) {
+  const serviceItem = document.createElement("li");
 
-  document.querySelector(".services-menu").appendChild(servicesMenu);
+  serviceItem.innerHTML = `              
+  <a href="${pageData == "index" ? "./" : "../"}${service.url}">${
+    service.title
+  }</a>`;
+
+  document.querySelector(".services-menu").appendChild(serviceItem);
 }
 
-function getMobileMenu(item) {
-  let servicesMenu = document.createElement("li");
-  servicesMenu.innerHTML = `              
-  <a href="${pageData == "index" ? "./" : "../"}${item.url}">${item.title}</a>`;
+function getMobileMenuItem(service) {
+  const serviceItem = document.createElement("li");
 
-  document.querySelector(".mobile-services-menu").appendChild(servicesMenu);
+  serviceItem.innerHTML = `              
+  <a href="${pageData == "index" ? "./" : "../"}${service.url}">${
+    service.title
+  }</a>`;
+
+  document.querySelector(".mobile-services-menu").appendChild(serviceItem);
 }
 
-function getServices(item) {
-  if (pageData == "index") {
-    let newService = document.createElement("div");
-    newService.className = "card";
-    newService.innerHTML = `
-    <div class="icon-container">
-      <i class="${item.icon}"></i>
-    </div>
-    <h3><a href="${item.url}">${item.title}</a></h3>
-    <p>${item.description}</p>
+function createCarousel() {
+  document.querySelector(".glide").innerHTML = `
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+    </ul>
+  </div>
+  <div class="glide__bullets" data-glide-el="controls[nav]"></div>
   `;
-    document.querySelector(".cards-container").appendChild(newService);
-  } else if (pageData == "pages") {
-    let newService = document.createElement("li");
-    newService.className = "glide__slide";
-    newService.innerHTML = `
-    <a href="../${item.url}">
-      <div class="card">
-        <div class="icon-container">
-          <i class="${item.icon}"></i>
-        </div>
-        <h3>${item.title}</h3>
-      </div>
-    </a>
-  `;
-    document.querySelector(".glide__slides").appendChild(newService);
-
-    let bullet = document.createElement("button");
-    bullet.className = "glide__bullet";
-    bullet.setAttribute("data-glide-dir", "=" + bullets);
-
-    document.querySelector(".glide__bullets").appendChild(bullet);
-    bullets++;
-  } else {
-    return;
-  }
 }
 
-function getPartners(item) {
-  if (pageData == "index" || pageData == "about") {
-    let newPartner = document.createElement("li");
-    newPartner.className = "glide__slide";
-    let path = `../src/assets/img/partners/${item.name.toLowerCase()}.png`;
-    newPartner.innerHTML = `
-  <a href="${item.url}" class="slide-item" target="_blank">
-    <img src="${path}" alt="Parceiro - ${item.name}">
-  </a>
-`;
+function createBullet() {
+  const bullet = document.createElement("button");
+  bullet.className = "glide__bullet";
+  bullet.setAttribute("data-glide-dir", "=" + bullets);
 
-    document.querySelector(".glide__slides").appendChild(newPartner);
-
-    let bullet = document.createElement("button");
-    bullet.className = "glide__bullet";
-    bullet.setAttribute("data-glide-dir", "=" + bullets);
-
-    document.querySelector(".glide__bullets").appendChild(bullet);
-    bullets++;
-  }
+  document.querySelector(".glide__bullets").appendChild(bullet);
+  bullets++;
 }
 
+// Services
 function loadServices() {
   fetch("../src/data/services.json")
     .then((response) => response.json())
@@ -130,28 +96,72 @@ function loadServices() {
             document.querySelector(".info-container h1").innerHTML,
         );
       }
-      data.services.forEach((item) => {
-        getServices(item);
-        getMenu(item);
-        getMobileMenu(item);
+      data.services.forEach((service) => {
+        if (pageData == "index") {
+          const newService = document.createElement("div");
+          newService.className = "card";
+          newService.innerHTML = `
+          <a href="${service.url}">
+            <div class="icon-container">
+              <i class="${service.icon}"></i>
+            </div>
+            <h3>${service.title}</h3>
+            <p>${service.description}</p>
+          </a>
+        `;
+          document.querySelector(".cards-container").appendChild(newService);
+        } else if (pageData == "pages") {
+          (async function () {
+            await createCarousel();
+            const newService = document.createElement("li");
+            newService.className = "glide__slide";
+            newService.innerHTML = `
+            <a href="../${service.url}">
+              <div class="card">
+                <div class="icon-container">
+                  <i class="${service.icon}"></i>
+                </div>
+                <h3>${service.title}</h3>
+              </div>
+            </a>`;
+
+            document.querySelector(".glide__slides").appendChild(newService);
+            createBullet();
+          })();
+        }
+        getDesktopMenuItem(service);
+        getMobileMenuItem(service);
       });
     });
-
-  setTimeout(function () {
-    glideStart();
-  }, 250);
 }
 
-function loadPartners() {
+// Partners
+async function loadPartners() {
+  await createCarousel();
+
   fetch("../src/data/partners.json")
     .then((response) => response.json())
     .then((data) => {
-      data.partners.forEach((item) => {
-        getPartners(item);
+      data.partners.forEach((partner) => {
+        if (pageData == "index" || pageData == "about") {
+          let newPartner = document.createElement("li");
+          let path = `../src/assets/img/partners/${partner.name.toLowerCase()}.png`;
+          newPartner.innerHTML = `
+          <a href="${partner.url}" class="slide-item" target="_blank">
+            <img src="${path}" alt="Parceiro - ${partner.name}">
+          </a>
+          `;
+
+          document.querySelector(".glide__slides").appendChild(newPartner);
+          createBullet();
+        }
       });
+
+      glideStart();
     });
 }
 
+// Glide.js
 function glideStart() {
   if (pageData == "index" || pageData == "about") {
     new Glide(".glide", {
