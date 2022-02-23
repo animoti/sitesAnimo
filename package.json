@@ -1,14 +1,16 @@
 {
     "name": "animoconsultoria",
     "version": "1.0.0",
-    "main": "index.html",
+    "main": "index.js",
     "engines": {
       "node": "12.11.1"
     },
     "scripts": {
       "start": "node index.js",
-      "dev": "sass --watch src/sass/globals.scss:css/style.css",
-      "build": "sass src/sass/globals.scss:css/style.css -s compressed"
+      "dev": "sass --watch src/sass/globals.scss:src/styles/style.css",
+      "build": "sass src/sass/globals.scss:src/styles/style.min.css -s compressed",
+      "dev-pages": "sass --watch src/sass/pages.scss:src/styles/pages.css",
+      "build-pages": "sass src/sass/pages.scss:src/styles/pages.min.css -s compressed"
     },
     "devDependencies": {
       "sass": "^1.49.0"
