@@ -4,7 +4,6 @@ let classToToggle = "active";
 let bullets = 0;
 const Header = {
   overlay: document.querySelector("#overlay"),
-  element: document.querySelector("#header"),
   menu: document.querySelector(".mobile-menu"),
   mobileServices: document.querySelector(".mobile-services-menu"),
   mobileIcon: document.querySelector(".mobile-menu .services-trigger > a"),
@@ -30,15 +29,6 @@ const Menu = {
     });
     Header.menu.classList.toggle(classToToggle);
     Header.overlay.classList.toggle(classToToggle);
-  },
-};
-
-const Home = {
-  element: document.querySelector("#home"),
-
-  setHeight() {
-    let height = Header.element.getBoundingClientRect().height;
-    this.element.style.height = `calc(100vh - ${height}px)`;
   },
 };
 
@@ -200,13 +190,6 @@ function glideStart() {
 
 // Onload Functions
 window.onload = () => {
-  if (Home.element) {
-    Home.setHeight();
-    window.addEventListener("resize", () => {
-      Home.setHeight();
-    });
-  }
-
   Header.services.addEventListener("mouseleave", () => {
     Header.fullSizeDropdown();
   });

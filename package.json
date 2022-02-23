@@ -2,9 +2,6 @@
     "name": "animoconsultoria",
     "version": "1.0.0",
     "main": "index.js",
-    "engines": {
-      "node": "12.11.1"
-    },
     "scripts": {
       "start": "node index.js",
       "dev": "sass --watch src/sass/globals.scss:src/styles/style.css",

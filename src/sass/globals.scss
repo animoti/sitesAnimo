@@ -397,6 +397,8 @@ a {
   position: relative;
 
   .container {
+    padding-top: 11rem;
+    padding-bottom: 11rem;
     justify-content: space-between;
     gap: 3rem;
 
@@ -437,6 +439,9 @@ a {
       text-align: center;
       gap: 1.5rem;
       justify-content: center;
+
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
   }
 }
