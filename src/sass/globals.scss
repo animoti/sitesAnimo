@@ -443,6 +443,11 @@ a {
       padding-top: 2rem;
       padding-bottom: 2rem;
     }
+
+    @media (max-width: 1366px) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
   }
 }
 
