@@ -164,10 +164,10 @@ async function loadPartners() {
           createBullet();
         }
       });
-      glideStart();
-      console.log("Loaded Services");
-      console.log("Loaded Partners");
     });
+  glideStart();
+  console.log("Loaded Services");
+  console.log("Loaded Partners");
 }
 
 // Glide.js
@@ -213,6 +213,7 @@ window.onload = () => {
     Header.fullSizeDropdown();
   });
   setWhatsappMessage();
+
   setTimeout(() => {
     loadServices();
     loadPartners();
