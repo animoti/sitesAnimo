@@ -135,6 +135,7 @@ function loadServices() {
 
             document.querySelector(".glide__slides").appendChild(newService);
             createBullet();
+            glideStart();
           })();
         }
         getDesktopMenuItem(service);
