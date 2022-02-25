@@ -93,7 +93,7 @@ function createBullet() {
 }
 
 // Services
-function loadServices() {
+function loadDatabase() {
   fetch("../src/data/services.json")
     .then((response) => response.json())
     .then((data) => {
@@ -141,11 +141,6 @@ function loadServices() {
         getMobileMenuItem(service);
       });
     });
-}
-
-// Partners
-async function loadPartners() {
-  await createCarousel();
 
   fetch("../src/data/partners.json")
     .then((response) => response.json())
@@ -165,13 +160,11 @@ async function loadPartners() {
         }
       });
     });
-  glideStart();
-  console.log("Loaded Services");
-  console.log("Loaded Partners");
 }
 
 // Glide.js
-function glideStart() {
+async function glideStart() {
+  await loadDatabase();
   if (pageData == "index" || pageData == "about") {
     new Glide(".glide", {
       autoplay: 5000,
@@ -215,7 +208,6 @@ window.onload = () => {
   setWhatsappMessage();
 
   setTimeout(() => {
-    loadServices();
-    loadPartners();
+    glideStart();
   }, 50);
 };
