@@ -164,15 +164,9 @@ async function loadPartners() {
           createBullet();
         }
       });
-      try {
-        glideStart();
-        console.log("Loaded Services");
-        console.log("Loaded Partners");
-      } catch (error) {
-        if (error) {
-          location.reload();
-        }
-      }
+      glideStart();
+      console.log("Loaded Services");
+      console.log("Loaded Partners");
     });
 }
 
@@ -219,9 +213,8 @@ window.onload = () => {
     Header.fullSizeDropdown();
   });
   setWhatsappMessage();
+  setTimeout(() => {
+    loadServices();
+    loadPartners();
+  }, 50);
 };
-
-setTimeout(() => {
-  loadServices();
-  loadPartners();
-}, 50);
