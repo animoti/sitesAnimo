@@ -164,8 +164,15 @@ async function loadPartners() {
           createBullet();
         }
       });
-
-      glideStart();
+      try {
+        glideStart();
+        console.log("Loaded Services");
+        console.log("Loaded Partners");
+      } catch (error) {
+        if (error) {
+          location.reload();
+        }
+      }
     });
 }
 
@@ -214,5 +221,7 @@ window.onload = () => {
   setWhatsappMessage();
 };
 
-loadServices();
-loadPartners();
+setTimeout(() => {
+  loadServices();
+  loadPartners();
+}, 100);
