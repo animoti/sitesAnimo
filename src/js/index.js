@@ -135,7 +135,6 @@ function loadServices() {
 
             document.querySelector(".glide__slides").appendChild(newService);
             createBullet();
-            glideStart();
           })();
         }
         getDesktopMenuItem(service);
@@ -225,4 +224,4 @@ window.onload = () => {
 setTimeout(() => {
   loadServices();
   loadPartners();
-}, 100);
+}, 50);
