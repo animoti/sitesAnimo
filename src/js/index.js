@@ -1,7 +1,10 @@
+// Global Vars
+const classToToggle = "active";
+let bullets = 0;
+
 // Dom Objects
 const pageData = document.querySelector("body").getAttribute("pagedata");
-let classToToggle = "active";
-let bullets = 0;
+
 const Header = {
   overlay: document.querySelector("#overlay"),
   menu: document.querySelector(".mobile-menu"),
@@ -32,7 +35,7 @@ const Menu = {
   },
 };
 
-// Functions
+// Helpers
 function getWhatsappMessage() {
   let time = new Date().getHours();
   return time > 11 && time <= 17
@@ -42,48 +45,33 @@ function getWhatsappMessage() {
     : "Bom dia";
 }
 
-async function setWhatsappMessage() {
+function setWhatsappMessage() {
   const whatsappButton = document.querySelector(".whatsapp");
 
   whatsappButton.setAttribute(
     "href",
-    `https://api.whatsapp.com/send?phone=+5521991115329&text=${await getWhatsappMessage()}, gostaria de agendar uma reunião!`,
+    `https://api.whatsapp.com/send?phone=+5521991115329&text=${getWhatsappMessage()}, gostaria de agendar uma reunião!`,
   );
 }
 
-function getDesktopMenuItem(service) {
-  const serviceItem = document.createElement("li");
+function getMenu(services) {
+  let menuHtml = "";
 
-  serviceItem.innerHTML = `              
-  <a href="${pageData == "index" ? "./" : "../"}${service.url}">${
-    service.title
-  }</a>`;
-
-  document.querySelector(".services-menu").appendChild(serviceItem);
-}
-
-function getMobileMenuItem(service) {
-  const serviceItem = document.createElement("li");
-
-  serviceItem.innerHTML = `              
-  <a href="${pageData == "index" ? "./" : "../"}${service.url}">${
-    service.title
-  }</a>`;
-
-  document.querySelector(".mobile-services-menu").appendChild(serviceItem);
-}
-
-function createCarousel() {
-  document.querySelector(".glide").innerHTML = `
-  <div class="glide__track" data-glide-el="track">
-    <ul class="glide__slides">
-    </ul>
-  </div>
-  <div class="glide__bullets" data-glide-el="controls[nav]"></div>
+  services.forEach((service) => {
+    let menuHtmlSegment = `
+    <li>
+      <a href="${pageData == "index" ? "./" : "../"}${service.url}">${
+      service.title
+    }</a>
+    </li>
   `;
+    menuHtml += menuHtmlSegment;
+  });
+  document.querySelector(".services-menu").innerHTML = menuHtml;
+  document.querySelector(".mobile-services-menu").innerHTML = menuHtml;
 }
 
-function createBullet() {
+function renderBullets() {
   const bullet = document.createElement("button");
   bullet.className = "glide__bullet";
   bullet.setAttribute("data-glide-dir", "=" + bullets);
@@ -92,79 +80,102 @@ function createBullet() {
   bullets++;
 }
 
-// Services
-function loadDatabase() {
-  fetch("../src/data/services.json")
-    .then((response) => response.json())
-    .then((data) => {
-      if (pageData == "pages") {
-        data.services = data.services.filter(
-          (item) =>
-            item.title !==
-            document.querySelector(".info-container h1").innerHTML,
-        );
-      }
-      data.services.forEach((service) => {
-        if (pageData == "index") {
-          const newService = document.createElement("div");
-          newService.className = "card";
-          newService.innerHTML = `
-          <a href="${service.url}">
-            <div class="icon-container">
-              <i class="${service.icon}"></i>
-            </div>
-            <h3>${service.title}</h3>
-            <p>${service.description}</p>
-          </a>
-        `;
-          document.querySelector(".cards-container").appendChild(newService);
-        } else if (pageData == "pages") {
-          (async function () {
-            await createCarousel();
-            const newService = document.createElement("li");
-            newService.className = "glide__slide";
-            newService.innerHTML = `
-            <a href="../${service.url}">
-              <div class="card">
-                <div class="icon-container">
-                  <i class="${service.icon}"></i>
-                </div>
-                <h3>${service.title}</h3>
+// Database Functions
+async function getServices() {
+  try {
+    let response = await fetch("../src/data/services.json");
+    return await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function renderServices() {
+  let servicesJson = await getServices();
+  let servicesArr = servicesJson.services;
+
+  if (pageData == "pages") {
+    servicesArr = servicesJson.services.filter(
+      (item) =>
+        item.title !== document.querySelector(".info-container h1").innerHTML,
+    );
+  }
+
+  getMenu(servicesArr);
+  let html = "";
+
+  if (pageData == "pages") {
+    servicesArr.forEach((service) => {
+      let segment = `
+        <li class="glide__slide">
+          <a href="../${service.url}">
+            <div class="card">
+              <div class="icon-container">
+                <i class="${service.icon}"></i>
               </div>
-            </a>`;
+              <h3>${service.title}</h3>
+            </div>
+          </a>
+        </li>
+      `;
 
-            document.querySelector(".glide__slides").appendChild(newService);
-            createBullet();
-          })();
-        }
-        getDesktopMenuItem(service);
-        getMobileMenuItem(service);
-      });
+      html += segment;
+      document.querySelector(".glide__slides").innerHTML = html;
+      renderBullets();
     });
+    glideStart();
+  } else if (pageData == "index") {
+    servicesArr.forEach((service) => {
+      let segment = `
+        <div class="card">
+        <a href="${service.url}">
+          <div class="icon-container">
+            <i class="${service.icon}"></i>
+          </div>
+          <h3>${service.title}</h3>
+          <p>${service.description}</p>
+        </a>
+        </div>
+        `;
+      html += segment;
+      document.querySelector(".cards-container").innerHTML = html;
+    });
+  }
+}
 
-  fetch("../src/data/partners.json")
-    .then((response) => response.json())
-    .then((data) => {
-      data.partners.forEach((partner) => {
-        if (pageData == "index" || pageData == "about") {
-          let newPartner = document.createElement("li");
-          let path = `../src/assets/img/partners/${partner.name.toLowerCase()}.png`;
-          newPartner.innerHTML = `
+async function getPartners() {
+  try {
+    let response = await fetch("../src/data/partners.json");
+    return await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function renderPartners() {
+  let partnersJson = await getPartners();
+  let html = "";
+
+  if (pageData == "index" || pageData == "about") {
+    partnersJson.partners.forEach((partner) => {
+      let path = `../src/assets/img/partners/${partner.name.toLowerCase()}.png`;
+      let segment = `
+      <li>
           <a href="${partner.url}" class="slide-item" target="_blank">
             <img src="${path}" alt="Parceiro - ${partner.name}">
           </a>
-          `;
-
-          document.querySelector(".glide__slides").appendChild(newPartner);
-          createBullet();
-        }
-      });
+       </li>
+    `;
+      html += segment;
+      renderBullets();
     });
+    document.querySelector(".glide__slides").innerHTML = html;
+    glideStart();
+  }
 }
 
 // Glide.js
-async function glideStart() {
-  await loadDatabase();
+function glideStart() {
   if (pageData == "index" || pageData == "about") {
     new Glide(".glide", {
       autoplay: 5000,
@@ -205,9 +216,20 @@ window.onload = () => {
   Header.services.addEventListener("mouseleave", () => {
     Header.fullSizeDropdown();
   });
-  setWhatsappMessage();
+  try {
+    setWhatsappMessage();
+    console.log("Api Whatsapp Loaded");
+  } catch (e) {
+    e.message = "Whatsapp Api Load Error";
+    console.log(e);
+  }
 
-  setTimeout(() => {
-    glideStart();
-  }, 50);
+  try {
+    renderPartners();
+    renderServices();
+    console.log("Database Loaded");
+  } catch (e) {
+    e.message = "Database Load Error";
+    console.log(e);
+  }
 };
