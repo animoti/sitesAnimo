@@ -1,9 +1,9 @@
 {
   "services": [{
-    "title": "Viabilidade e Projeção Financeira", 
+    "title": "Análise de Viabilidade e Projeção Financeira", 
     "url": "./pages/feasibility-financial.html",
     "icon": "icon-pie-chart",
-    "description": "Nossas consultorias possibilitam uma visão ampla de planejamento e gerenciamento da sua empresa. A projeção financeira é útil para as relações com futuros investidores além de ser uma importante ferramenta de diagnóstico financeiro"
+    "description": "Análise focada em entender se o investimento na sua empresa ou no seu projeto realmente vale a pena, tendo em vista que essa análise verifica em dados reais qual a chance do seu investimento trazer algum retorno sólido. Além disso, essa análise auxilia a encontrar investidores para seu negócio, já que ela mostra com números que o investimento é viável e trará retorno atrativo. Portanto, é o serviço perfeito para quem deseja compreender se de fato vale a pena começar um negócio/projeto ou para quem busca possíveis investidores para alavancar a sua empresa."
   },
   {
     "title": "Precificação", 
@@ -34,6 +34,18 @@
     "url": "./pages/social-networks.html",
     "icon": "icon-smartphone",
     "description": "As mídias sociais estão em alta. Atualmente, para a empresa alcançar boa visibilidade no mercado, é importante a gestão das redes sociais como uma das principais estratégias de marketing digital. Nossas consultorias de gerenciamento de redes sociais são personalizadas e adaptadas para cada objetivo da sua empresa."
+  },
+  {
+    "title": "Análise da Estrutura de Custos e Otimização", 
+    "url": "./pages/cost-optimization.html",
+    "icon": "icon-dollar-sign",
+    "description": "Análise da estrutura de custos da empresa, visando compreender quais são todos os custos, não apenas com objetivo de cortar aqueles que não são necessários, mas também de entender como otimizá-los, isto é, verificar se há uma maneira mais eficiente de empregar aquele custo, ou seja, produzir mais sem gastar mais!"
+  },
+  {
+    "title": "Indicadores (KPIs) e Orçamento", 
+    "url": "./pages/kpi.html",
+    "icon": "icon-pie-chart",
+    "description": "Ambos fornecem uma base para entender como está a evolução e a saúde financeira do seu negócio. Os indicadores como o nome já apontam indicam diversos pontos do seu negócio, ou seja, eles são ideais para acompanhar e verificar se a sua empresa está de fato gerando bons resultados e é importante para entender o que precisa ser melhorado. Já o orçamento é uma métrica para que você tenha um maior controle sobre as prioridades e as contas do negócio, portanto ele é uma ótima base para que o empreendedor(a) entenda o desempenho real do seu negócio e o que precisa ser feito para crescer e melhorar sua empresa."
   }
 ]
 }
