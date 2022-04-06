@@ -222,7 +222,7 @@ a:hover {
 
 .line {
   display: block;
-  background-color: rgba(37, 49, 55, 0.1);
+  background-color: hsla(200deg, 20%, 18%, 0.1);
   width: 100%;
   height: 1px;
 }
@@ -281,7 +281,7 @@ a:hover {
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
-  box-shadow: 0 0 4px #00000029;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1607843137);
   transition: all 0.6s ease;
   -webkit-transition: all 0.6s ease;
   -moz-transition: all 0.6s ease;
@@ -483,7 +483,7 @@ a:hover {
   text-transform: capitalize;
   display: block;
   padding: 1rem;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+  border-bottom: solid 1px hsla(0deg, 0%, 100%, 0.2);
 }
 #header .container .menu-container .mobile-menu.active {
   opacity: 1;
@@ -538,7 +538,7 @@ a:hover {
   justify-content: space-between;
   gap: 3rem;
 }
-#home .container .-containinfoer {
+#home .container .info-container {
   width: min(25rem, 100%);
 }
 #home .container .info-container h1 {
@@ -687,7 +687,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 4px #00000029;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1607843137);
   margin: 1rem auto;
   opacity: 1;
 }
@@ -851,6 +851,10 @@ a:hover {
 #about-page-purpose .container .info-container p {
   margin: 0 0 1rem 0.5rem;
 }
+#about-page-purpose .container .info-container.reasons {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
 
 #gallery .container {
   display: block;
@@ -908,6 +912,10 @@ a:hover {
 
 #main-content .container {
   display: block;
+}
+#main-content .container .button {
+  width: fit-content;
+  margin: 3rem auto 0 auto;
 }
 @media (max-width: 768px) {
   #main-content .container {

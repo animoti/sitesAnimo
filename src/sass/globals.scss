@@ -728,6 +728,10 @@ a {
       p {
         margin: 0 0 1rem 0.5rem;
       }
+      &.reasons {
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+      }
     }
   }
 }
@@ -791,6 +795,10 @@ a {
 }
 
 #main-content .container {
+  .button {
+    width: fit-content;
+    margin: 3rem auto 0 auto;
+  }
   @media (max-width: 768px) {
     padding-top: 3rem;
     padding-bottom: 3rem;

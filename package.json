@@ -5,9 +5,7 @@
     "scripts": {
       "start": "node index.js",
       "dev": "sass --watch src/sass/globals.scss:src/styles/style.css",
-      "build": "sass src/sass/globals.scss:src/styles/style.min.css -s compressed",
-      "dev-pages": "sass --watch src/sass/pages.scss:src/styles/pages.css",
-      "build-pages": "sass src/sass/pages.scss:src/styles/pages.min.css -s compressed"
+      "build": "sass src/sass/globals.scss:src/styles/style.min.css -s compressed"
     },
     "devDependencies": {
       "sass": "^1.49.0"
